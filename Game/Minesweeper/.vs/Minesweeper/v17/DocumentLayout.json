@@ -35,8 +35,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2023-12-09T10:19:07.935Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -46,7 +45,7 @@
               "RelativeDocumentMoniker": "game.c",
               "ToolTip": "D:\\CLanguage\\E_Github\\Exercise\\Game\\Minesweeper\\game.c",
               "RelativeToolTip": "game.c",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAAAFQAAAALAAAA",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAAAFQAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2023-12-09T10:19:22.802Z",
               "EditorCaption": ""
