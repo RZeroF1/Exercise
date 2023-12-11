@@ -62,15 +62,7 @@ void DisplayMap(char arr[ROWS][COLS], int row, int col)
 
 void SetMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
-	int m = 0;
-	int n = 0;
 	int num = Easy;
-	int count = 0;
-	printf("Enter the location you want：(separate by a space)");
-	scanf("%d %d", &m, &n);
-	system("cls");
-	mine[m][n] = '2';
-
 	while (num)
 	{
 		int x = rand() % row + 1;
@@ -81,19 +73,28 @@ void SetMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 			num--;
 		}
 	}
-
-	mine[m][n] = '0';
-	count = GetMineNum(mine, m, n);
-	show[m][n] = count + '0';
-	DisplayMap(show, ROW, COL);
 }
 
 void SweepMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x = 0;
 	int y = 0;
+	int count1 = 0;
 	int win = 1;
-	
+
+	//防止第一次就踩雷
+	printf("Enter the location you want：(separate by a space)");
+	scanf("%d %d", &x, &y);
+	mine[x][y] = '2';
+	SetMine(mine, show, ROW, COL);
+	mine[x][y] = '0';
+	count1 = GetMineNum(mine, x, y);
+	show[x][y] = '0' + count1;
+	Expand(mine, show, x, y, win);
+	system("cls");
+	DisplayMap(show, ROW, COL);
+//	DisplayMap(mine, ROW, COL);
+
 	while (win < row*col - Easy)
 	{
 		printf("Enter the location you want：(separate by a space)");
@@ -112,7 +113,7 @@ void SweepMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 				system("cls");
 				int count = GetMineNum(mine, x, y);
 				show[x][y] = count + '0';
-//				Expand(mine, show, x, y, win);
+				Expand(mine, show, x, y, win);
 				DisplayMap(show, ROW, COL);
 //				DisplayMap(mine, ROW, COL);
 				win++;
@@ -133,27 +134,27 @@ int GetMineNum(char arr[ROWS][COLS], int m, int n)
 		+ arr[m + 1][n - 1] + arr[m + 1][n] + arr[m + 1][n + 1] - 8 * '0';
 }
 
-void Expand(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y, int* win)
+void Expand(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y, int win)
 {
 	if (x > 0 && x <= ROW && y > 0 && y <= COL)
 	{
-		int minenum = GetMineNum(mine[ROWS][COLS], x, y);
+		int minenum = GetMineNum(mine, x, y);
 		if (minenum == 0)
 		{
-			show[x][y] = ' ';
+			show[x][y] = '0';
 			//接下来向周围8个位置递归
 			for (int i = x - 1; i <= x + 1; i++)
 			{
-				for (int j = y - 1; j <= j + 1; j++)
+				for (int j = y - 1; j <= y + 1; j++)
 				{
 					if (show[i][j] == '*')
 					{
-					Expand(mine, show, x, y, win);
+					Expand(mine, show, i, j, win);
 					}
 				}
 			}
 		}
-		*win++;
+		win++;
 	}
 }
 
@@ -168,7 +169,7 @@ void Game()
 //	DisplayMap(MineMap, ROW, COL);
 	DisplayMap(ShowMap, ROW, COL);
 
-	SetMine(MineMap, ShowMap, ROW, COL);
+//	SetMine(MineMap, ShowMap, ROW, COL);集成到扫雷过程
 //	DisplayMap(MineMap, ROW, COL);
 
 	SweepMine(MineMap, ShowMap, ROW, COL);
