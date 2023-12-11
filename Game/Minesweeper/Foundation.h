@@ -1,7 +1,7 @@
 #pragma once
 
-#define ROW 8
-#define COL 8
+#define ROW 9
+#define COL 9
 
 #define ROWS ROW + 2
 #define COLS COL + 2
