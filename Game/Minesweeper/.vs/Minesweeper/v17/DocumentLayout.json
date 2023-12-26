@@ -32,10 +32,11 @@
               "RelativeDocumentMoniker": "main.c",
               "ToolTip": "D:\\CLanguage\\E_Github\\Exercise\\Game\\Minesweeper\\main.c",
               "RelativeToolTip": "main.c",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2023-12-09T10:19:07.935Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,7 +46,7 @@
               "RelativeDocumentMoniker": "game.c",
               "ToolTip": "D:\\CLanguage\\E_Github\\Exercise\\Game\\Minesweeper\\game.c",
               "RelativeToolTip": "game.c",
-              "ViewState": "AQIAAJcAAAAAAAAAAAAAAKIAAAAAAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAAAHoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2023-12-09T10:19:22.802Z",
               "EditorCaption": ""
@@ -58,7 +59,7 @@
               "RelativeDocumentMoniker": "Foundation.h",
               "ToolTip": "D:\\CLanguage\\E_Github\\Exercise\\Game\\Minesweeper\\Foundation.h",
               "RelativeToolTip": "Foundation.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2023-12-09T10:19:59.127Z"
             }
