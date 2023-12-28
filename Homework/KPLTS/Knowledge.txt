@@ -1,0 +1,582 @@
+Chapter1 A Tutorial Introduction
+1.1Getting Ready
+
+1.1.1 Whence C
+Dennis Ritchie of Bell Labs created C in 1972 as he and Ken Thompson worked on designing
+the Unix operating system. C didn’t spring full-grown from Ritchie’s head, however. It came
+from Thompson’s B language, which came from... but that’s another story. The important
+point is that C was created as a tool for working programmers, so its chief goal is to be a useful
+language.
+Most languages aim to be useful, but they often have other concerns. The main goal for
+Pascal, for instance, was to provide a sound basis for teaching good programming principles.
+BASIC, on the other hand, was developed to resemble English so that it could be learned easily
+by students unfamiliar with computers. These are important goals, but they are not always
+compatible with pragmatic, workaday usefulness. C’s development as a language designed for
+programmers, however, has made it one of the modern-day languages of choice.
+
+1.1.2 Why C
+During the past four decades, C has become one of the most important and popular programming
+languages. It has grown because people try it and like it. In the past decade or two, many
+have moved from C to languages such as C++, Objective C, and Java, but C is still an important
+language in its own right, as well a migration path to these others. As you learn C, you will
+recognize its many virtues.
+
+1.1.3 What Computers Do
+Modern computers have several components. The central processing unit , or CPU , does most
+of the computing work. The random access memory , or RAM , serves as a workspace to hold
+programs and files. The permanent memory storage device, typically a hard disk in the past,
+but now more and more often a solid-state device, remembers those programs and files, even
+while the computer is turned off. And various peripherals—such as the keyboard, mouse,
+touchscreen, and monitor—provide for communication between the computer and you. The
+CPU processes your programs; so let’s concentrate on its role.
+
+1.1.4 Shortcoming
+C does have some faults. Often, as with people, faults and virtues are opposite sides of the
+same feature. For example, we’ve mentioned that C’s freedom of expression also requires added
+responsibility. C’s use of pointers (something you can look forward to learning about in this
+book), in particular, means that you can make programming errors that are difficult to trace. As
+one computer preliterate once commented, the price of liberty is eternal vigilance.
+C’s conciseness, combined with its wealth of operators, make it possible to prepare code that is extremely difficult to follow. You aren’t compelled to write obscure code, but the opportunity
+is there. After all, what other language has a yearly Obfuscated Code contest?
+There are more virtues and, undoubtedly, a few more faults. Rather than delve further into the matter.
+
+1.1.5 Language Standards
+At first, there was no official standard for C. Instead, the first edition of The C Programming
+Language by Brian Kernighan and Dennis Ritchie (1978) became the accepted standard, usually
+referred to as K&R C or Classic C . In particular, the “C Reference Manual” in that book’s appendix
+acted as the guide to C implementations. Compilers, for example, would claim to offer a
+full K&R implementation. However, although this appendix defined the C language, it did not
+define the C library. More than most languages, C depends on its library, so there is need for a
+library standard, too. In the absence of any official standard, the library supplied with the Unix
+implementation became a factor standard.
+
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+
+1.2.1 The Structure of a Simple Program
+A program consists of a collection of one or more functions, one of which must be
+called main() . The description of a function consists of a header and a body. The function header
+contains the function name along with information about the type of information passed to
+the function and returned by the function. You can recognize a function name by the parentheses,
+which may be empty. The body is enclosed by braces ( {} ) and consists of a series of
+statements, each terminated by a semicolon (see Figure 2.4 ). The example in this chapter had
+a declaration statement , announcing the name and type of variable being used. Then it had an
+assignment statement giving the variable a value. Next, there were three print statements , each
+calling the printf() function. The print statements are examples of function call statements .
+Finally, main() ends with a return statement .
+In short, a simple standard C program should use the following format:
+
+#include <stdio.h>
+int main(void)
+{
+	statements
+	return 0;
+}
+
+1.2.2 Introduction to keywords
+There are a number of reserved name symbols in C language, such as: int, if, return, these symbols 
+are called reserved words or keywords.Keywords.
+- These symbols are called reserved words or keywords. Keywords have special meanings and are reserved for use in the C language.
+- Programmers cannot duplicate keywords when creating their own identifiers.
+
+1.2.3 Main function
+Every C program, no matter how many lines of code it has, starts with the main function, which is the entry point of the program.
+The main function is also called the main function. int in front of main means that 
+the main function returns an integer value at the end of its execution.
+The int in front of main means that the main function returns an integer value at the end of its execution. 
+So in the main function at the end of the return 0; just before and after the echo.
+- The main function is the entry point of the program
+- There is only one main function
+- Even if there are multiple .c files in a project, there can only be one main function.
+
+1.2.4 Library functions
+In order to stop repeating the implementation of common code, allowing programmers to improve development efficiency,
+the C language standard specifies a set of functions, which are then implemented by different
+These functions are then implemented by different compiler vendors according to the standard and made available to programmers.
+These functions form a library of functions called the standard library.
+library, and these functions are also called library functions. On top of that, some compiler vendors may extend the library with 
+additional functions (which may not be supported by other compilers).
+(which may not be supported by other compilers)
+
+1.2.5 Compilation and Linking
+C is a compiled computer language, C source code is a text file, the text file itself can not be executed, must be translated by 
+the compiler and linker to generate a binary executable file, the executable file can be executed.
+The text files themselves cannot be executed, but must be translated by a compiler and linked by a linker to produce 
+a binary executable file, which can then be executed.
+C language code is placed in the .c suffix file, to get the final run of the executable program, the middle has to go through 
+the compilation and linking two
+To get the final executable program, it has to go through two processes: compilation and linking.
+
+1.2.6 Characters and ASCII encoding
+Various characters can be struck on the keyboard such as: a, q, @, #, etc. These symbols are known as characters, which are enclosed in single quotes in C.
+in C. Characters are enclosed in single quotes like: 'a', 'b', '@'.
+We know that all data in a computer is stored in binary form, so what kind of binary system are these characters stored in memory?
+binary system in which each of these characters is stored in memory? If each of us makes up a binary sequence for each of these characters by ourselves, this is called coding, in order to
+In order to facilitate mutual communication and not to cause confusion, the American National Standards Institute (ANSI) later introduced a standard ASCII encoding, C
+The characters in the C language follow the ASCII encoding.
+
+1.2.7 Debugging
+The compiler can get confused. A true syntax error in one location might cause the
+compiler to mistakenly think it has found other errors. For instance, because the example does
+not declare n2 and n3 correctly, the compiler might think it has found further errors whenever
+those variables are used. In fact, if you can’t make sense of all the reported errors, rather than
+trying to correct all the reported errors at once, you should correct just the first one or two and
+then recompile; some of the other errors may go away. Continue in this way until the program
+works. Another common compiler trick is reporting the error a line late. For instance, the
+compiler may not deduce that a semicolon is missing until it tries to compile the next line. So
+if the compiler complains of a missing semicolon on a line that has one, check the line before.
+
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.1 int
+An integer is a number with no fractional part. In C, an integer is never written with a decimal
+point. Examples are 2, –23, and 2456. Numbers such as 3.14, 0.22, and 2.000 are not integers.
+Integers are stored as binary numbers. The integer 7, for example, is written 111 in binary.
+Therefore, to store this number in an 8-bit byte, just set the first 5 bits to 0 and the last 3 bits
+to 1
+
+2.1.2 float
+A floating-point number more or less corresponds to what mathematicians call a real number .
+Real numbers include the numbers between the integers. Some floating-point numbers are
+2.75, 3.16E7, 7.00, and 2e–8. Notice that adding a decimal point makes a value a floating-point
+value. So 7 is an integer type but 7.00 is a floating-point type. Obviously, there is more than
+one way to write a floating-point number. We will discuss the e-notation more fully later,
+but, in brief, the notation 3.16E7 means to multiply 3.16 by 10 to the 7th power; that is, by 1
+followed by 7 zeros. The 7 would be termed the exponent of 10.
+The key point here is that the scheme used to store a floating-point number is different from
+the one used to store an integer. Floating-point representation involves breaking up a number
+into a fractional part and an exponent part and storing the parts separately. Therefore, the
+7.00 in this list would not be stored in the same manner as the integer 7, even though both
+have the same value. The decimal analogy would be to write 7.0 as 0.7E1. Here, 0.7 is the fractional
+part, and the 1 is the exponent part. Figure 3.3 shows another example of floating-point
+storage. A computer, of course, would use binary numbers and powers of two instead of powers
+of 10 for internal storage.
+
+2.1.3 long Constants and long long Constants
+Normally, when you use a number such as 2345 in your program code, it is stored as an int
+type. What if you use a number such as 1000000 on a system in which int will not hold such
+a large number? Then the compiler treats it as a long int , assuming that type is large enough.
+If the number is larger than the long maximum, C treats it as unsigned long . If that is still
+insufficient, C treats the value as long long or unsigned long long , if those types are
+available.
+Octal and hexadecimal constants are treated as type int unless the value is too large. Then the
+compiler tries unsigned int . If that doesn’t work, it tries, in order, long , unsigned long ,
+long long , and unsigned long long .
+Sometimes you might want the compiler to store a small number as a long integer.
+Programming that involves explicit use of memory addresses on an IBM PC, for instance, can
+create such a need. Also, some standard C functions require type long values. To cause a small
+constant to be treated as type long , you can append an l (lowercase L ) or L as a suffix. The
+second form is better because it looks less like the digit 1. Therefore, a system with a 16-bit
+int and a 32-bit long treats the integer 7 as 16 bits and the integer 7L as 32 bits. The l and L
+suffixes can also be used with octal and hex integers, as in 020L and 0x10L .
+Similarly, on those systems supporting the long long type, you can use an ll or LL suffix to
+indicate a long long value, as in 3LL . Add a u or U to the suffix for unsigned long long , as
+in 5ull or 10LLU or 6LLU or 9Ull .
+
+2.1.4 char
+The char type is used for storing characters such as letters and punctuation marks, but technically
+it is an integer type. Why? Because the char type actually stores integers, not characters.
+To handle characters, the computer uses a numerical code in which certain integers represent
+certain characters. The most commonly used code in the U.S. is the ASCII code given in the
+table on the inside front cover. It is the code this book assumes. In it, for example, the integer
+value 65 represents an uppercase A . So to store the letter A , you actually need to store the
+integer 65 . (Many IBM mainframes use a different code, called EBCDIC, but the principle is the
+same. Computer systems outside the U.S. may use entirely different codes.)
+The standard ASCII code runs numerically from 0 to 127. This range is small enough that 7 bits
+can hold it. The char type is typically defined as an 8-bit unit of memory, so it is more than
+large enough to encompass the standard ASCII code. Many systems, such as the IBM PC and
+the Apple Macs, offer extended ASCII codes (different for the two systems) that still stay within
+an 8-bit limit. More generally, C guarantees that the char type is large enough to store the
+basic character set for the system on which C is implemented.
+
+2.1.5 Signed or Unsigned?
+Some C implementations make char a signed type. This means a char can hold values typically
+in the range –128 through 127. Other implementations make char an unsigned type,
+which provides a range of 0 through 255. Your compiler manual should tell you which type
+your char is, or you can check the limits.h header file, discussed in the next chapter.
+As of C90, C enabled you to use the keywords signed and unsigned with char . Then, regardless
+of what your default char is, signed char would be signed, and unsigned char would
+be unsigned. These versions of char are useful if you’re using the type to handle small integers.
+For character use, just use the standard char type without modifiers.
+
+2.1.6 The Bool Type
+The Bool type is a C99 addition that’s used to represent Boolean values—that is, the logical
+values true and false . Because C uses the value 1 for true and 0 for false , the Bool type
+really is just an integer type, but one that, in principle, only requires 1 bit of memory, because
+that is enough to cover the full range from 0 to 1.
+Programs use Boolean values to choose which code to execute next.
+
+2.1.7 Types float, double, and long double
+The various integer types serve well for most software development projects. However, financial
+and mathematically oriented programs often make use of floating-point numbers. In C, such
+numbers are called type float , double , or long double . They correspond to the real types
+of FORTRAN and Pascal. The floating-point approach, as already mentioned, enables you to
+represent a much greater range of numbers, including decimal fractions. Floating-point number
+representation is similar to scientific notation , a system used by scientists to express very large
+and very small numbers.
+
+2.1.8 Conversion Specifiers and the Resulting Printed Output
+Conversion	 Output Specification
+%a 	   	Floating-point number, hexadecimal digits and p-notation (C99/C11).
+%A	  	Floating-point number, hexadecimal digits and P-notation (C99/C11).
+%c	 	Single character.
+%d 		Signed decimal integer.
+%e		Floating-point number, e-notation.
+%E	 	Floating-point number, e-notation.
+%f 		Floating-point number, decimal notation.
+%g 		Use %f or %e , depending on the value. The %e style is used if the exponent is
+		less than −4 or greater than or equal to the precision.
+%G 		Use %f or %E , depending on the value. The %E style is used if the exponent is
+	 	less than −4 or greater than or equal to the precision.
+%i 	 	Signed decimal integer (same as %d ).
+%o	 	Unsigned octal integer.
+%p	 	A pointer.
+%s 	 	Character string.
+%u 	 	Unsigned decimal integer.
+%x 	 	Unsigned hexadecimal integer, using hex digits 0f .
+%X 	 	Unsigned hexadecimal integer, using hex digits 0F .
+%% 	 	Prints a percent sign.
+
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.1 Assignment Operator: =
+In C, the equal sign does not mean “equals.” Rather, it is a value-assigning operator. The
+statement
+bmw = 2002;
+assigns the value 2002 to the variable named bmw . That is, the item to the left of the = sign is
+the name of a variable, and the item on the right is the value assigned to the variable. The =
+symbol is called the assignment operator . Again, don’t think of the line as saying, "bmw equals
+2002 .” Instead, read it as “assign the value 2002 to the variable bmw .” The action goes from
+right to left for this operator.
+
+2.2.2 Addition Operator: +
+The addition operator causes the two values on either side of it to be added together. For
+example, the statement
+printf("%d", 4 + 20);
+causes the number 24 to be printed, not the expression
+4 + 20.
+The values (operands) to be added can be variables as well as constants. Therefore, the
+statement
+income = salary + bribes;
+causes the computer to look up the values of the two variables on the right, add them, and
+then assign this total to the variable income .
+As a reminder, note that income , salary , and bribes all are modifiable lvalues because each
+identifies a data object that could be assigned a value, but the expression salary + bribes is
+an rvalue, a calculated value not identified with a particular memory location.
+Chapter2 Type, Operation and Expressions
+
+2.2.3 Subtraction Operator: –
+The subtraction operator causes the number after the – sign to be subtracted from the number
+before the sign. The statement
+
+takehome = 224.00 – 24.00;
+
+assigns the value 200.0 to takehome .
+The + and – operators are termed binary , or dyadic, operators, meaning that they require two
+operands.
+
+2.2.4 Multiplication Operator: *
+Multiplication is indicated by the * symbol. The statement
+cm = 2.54 * inch;
+multiplies the variable inch by 2.54 and assigns the answer to cm .
+
+2.2.5 Division Operator: /
+C uses the / symbol to represent division. The value to the left of the / is divided by the value
+to the right. For example, the following gives four the value of 4.0 :
+four = 12.0/3.0;
+Division works differently for integer types than it does for floating types. Floating-type division
+gives a floating-point answer, but integer division yields an integer answer. An integer
+can’t have a fractional part, which makes dividing 5 by 3 awkward, because the answer does
+have a fractional part. In C, any fraction resulting from integer division is discarded. This
+process is called truncation .
+
+2.2.6 Modulus Operator: %
+The modulus operator is used in integer arithmetic. It gives the remainder that results when the
+integer to its left is divided by the integer to its right. For example, 13 % 5 (read as “13 modulo
+5”) has the value 3, because 5 goes into 13 twice, with a remainder of 3. Don’t bother trying to
+use this operator with floating-point numbers. It just won’t work.
+At first glance, this operator might strike you as an esoteric tool for mathematicians, but it
+is actually rather practical and helpful. One common use is to help you control the flow of a
+program. Suppose, for example, you are working on a bill-preparing program designed to add in
+an extra charge every third month. Just have the program evaluate the month number modulo
+3 (that is, month % 3 ) and check to see whether the result is 0. If it is, the program adds in
+the extra charge.
+
+2.2.7 Increment and Decrement Operators: ++ and --
+++ is a self-incrementing operator, which is further divided into pre++ and post++, and -- is a 
+self-decrementing operator, which is also divided into pre-- and post--.
+Pre-++
+
+int a = 10;
+int b = ++a;//++ operand is a, which is placed in front of a, that is, pre ++
+printf("a=%d b=%d\n",a , b);
+
+Calculation mnemonic: first +1, then use;
+a was 10, first +1, after a became 11, and then use is assigned to b, b get also 11, so after 
+the calculation technique, a and b are both
+are 11, equivalent to code like this:
+int a = 10;
+
+b = a.
+printf("a=%d b=%d\n",a , b);
+
+Posterior ++
+int a = 10;
+int b = a++;//++ operand is a, which is placed after a, that is, post++
+printf("a=%d b=%d\n",a , b);
+
+Calculation mnemonic: use first, then +1
+Same as --
+
+2.2.8 Forced type conversion
+Another special type of operator is forced type conversion, which has a simple syntax of the following form:
+See the code:
+
+int a = 3.14;
+//a is the type of int, 3.14 is the type of double, the two sides of the type is not consistent, the compiler 
+will report a warning!To eliminate this warning, we can use forced type conversion:
+1 int a = (int)3.14; // meaning that 3.14 is forced type conversion to int, this forced type conversion only 
+takes the integer part of 3.14
+
+2.2.9 More Assignment Operators: += , -= , *= , /= , %=
+C has several assignment operators. The most basic one, of course, is = , which simply assigns
+the value of the expression at its right to the variable at its left. The other assignment operators
+update variables. Each is used with a variable name to its left and an expression to its right. The
+variable is assigned a new value equal to its old value adjusted by the value of the expression at
+the right. The exact adjustment depends on the operator. For example,
+scores += 20 is the same as scores = scores + 20 .
+dimes -= 2 is the same as dimes = dimes - 2 .
+bunnies *= 2 is the same as bunnies = bunnies * 2 .
+time /= 2.73 is the same as time = time / 2.73 .
+reduce %= 3 is the same as reduce = reduce % 3 .
+The preceding list uses simple numbers on the right, but these operators also work with more
+elaborate expressions, such as the following:
+x *= 3 * y + 12 is the same as x = x * (3 * y + 12) .
+The assignment operators we’ve just discussed have the same low priority that = does—that is,
+less than that of + or * . This low priority is reflected in the last example in which 12 is added
+to 3 * y before the result is multiplied by x .
+You are not required to use these forms. They are, however, more compact, and they may
+produce more efficient machine code than the longer form. The combination assignment operators
+are particularly useful when you are trying to squeeze something complex into a
+for loop specification.
+
+Chapter2 Type, Operation and Expressions
+2.3 Expressions and Statements
+2.3.1 Expressions
+An expression consists of a combination of operators and operands. (An operand, recall, is what
+an operator operates on.) The simplest expression is a lone operand, and you can build in
+complexity from there. Here are some expressions:
+4
+-6
+4+21
+a*(b + c/d)/20
+q = 5*2
+x = ++q % 3
+q > 3
+Expressions, and Statements
+As you can see, the operands can be constants, variables, or combinations of the two. Some
+expressions are combinations of smaller expressions, called subexpressions . For example, c/d is a
+subexpression of the fourth example.
+Every Expression Has a Value
+An important property of C is that every C expression has a value. To find the value, you
+perform the operations in the order dictated by operator precedence. The value of the first few
+expressions we just listed is clear, but what about the ones with = signs? Those expressions
+simply have the same value that the variable to the left of the = sign receives. Therefore, the
+expression q=5*2 as a whole has the value 10 . What about the expression q > 3 ? Such relational
+expressions have the value 1 if true and 0 if false. Here are some expressions and their
+values:
+Expression 		Value
+-4 + 6 			2
+c = 3 + 8 		11
+5 > 3 			1
+6 + (c = 3 + 8) 	17
+The last expression looks strange! However, it is perfectly legal (but ill-advised) in C because it
+is the sum of two subexpressions, each of which has a value.
+
+2.3.2 Statements
+Statements are the primary building blocks of a program. A program is a series of statements with
+some necessary punctuation. A statement is a complete instruction to the computer. In C, statements
+are indicated by a semicolon at the end. Therefore,
+legs = 4
+is just an expression (which could be part of a larger expression), but
+legs = 4;
+is a statement.
+The simplest possible statement is the null statement:
+; // null statement
+It does nothing, a special case of an instruction.
+More generally, what makes a complete instruction? First, C considers any expression to be
+a statement if you append a semicolon. (These are called expression statements .) Therefore, C
+won’t object to lines such as the following:
+8;
+3 + 4;
+However, these statements do nothing for your program and can’t really be considered sensible
+statements. More typically, statements change values and call functions:
+x = 25;
+++x;
+y = sqrt(x);
+Although a statement (or, at least, a sensible statement) is a complete instruction, not all
+complete instructions are statements. Consider the following statement:
+x = 6 + (y = 5);
+In it, the subexpression y = 5 is a complete instruction, but it is only part of the statement.
+Because a complete instruction is not necessarily a statement, a semicolon is needed to identify
+instructions that truly are statements.
+
+Chapter3 Control Flow
+3.1 C Control Statements:Looping
+3.1.1 while loop
+This is the general form of the while loop:
+
+while ( expression )
+	statement
+
+The statement part can be a simple statement with a terminating semicolon, or it can be a
+compound statement enclosed in braces.
+So far, the examples have used relational expressions for the expression part; that is,
+expression has been a comparison of values. More generally, you can use any expression.
+If expression is true (or, more generally, nonzero), the statement is executed once and then
+the expression is tested again. This cycle of test and execution is repeated until expression
+becomes false (zero). Each cycle is called an iteration.
+
+3.1.2 for loop
+The for loop gathers all three actions (initializing, testing, and updating) into one place. By
+using a for loop, you can replace the preceding program with the one shown:
+
+#include <stdio.h>
+int main(void)
+{
+const int NUMBER = 22;
+int count;
+for (count = 1; count <= NUMBER; count++)
+printf("Be my Valentine!\n");
+return 0;
+}
+
+The parentheses following the keyword for contain three expressions separated by two semicolons.
+The first expression is the initialization. It is done just once, when the for loop first
+starts. The second expression is the test condition; it is evaluated before each potential execution
+of a loop. When the expression is false (when count is greater than NUMBER ), the loop is
+terminated. The third expression, the change or update, is evaluated at the end of each loop.
+Listing 6.10 uses it to increment the value of count , but it needn’t be restricted to that use. The
+for statement is completed by following it with a single simple or compound statement. Each
+of the three control expressions is a full expression, so any side effects in a control expression,
+such as incrementing a variable, take place before the program evaluates another expression.
+
+3.1.3 do while
+The while loop and the for loop are both entry-condition loops. The test condition is checked
+before each iteration of the loop, so it is possible for the statements in the loop to never
+execute. C also has an exit-condition loop, in which the condition is checked after each iteration
+of the loop, guaranteeing that statements are executed at least once. This variety is called a
+do while loop.
+
+#include <stdio.h>
+int main(void)
+{
+	const int secret_code = 13;
+	int code_entered;
+do{
+	printf("To enter the triskaidekaphobia therapy club,\n");
+	printf("please enter the secret code number: ");
+	scanf("%d", &code_entered);
+} while (code_entered != secret_code);
+	printf("Congratulations! You are cured!\n");
+	return 0;
+}
+The program reads input values until the user enters 13 . The following is a
+sample run:
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 12
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 14
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 13
+Congratulations! You are cured!
+
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.1 The if Statement
+Let’s start with a simple example of an if statement, shown. This program reads
+in a list of daily low temperatures (in Celsius) and reports the total number of entries and the
+percentage that were below freezing (that is, below zero degrees Celsius). It uses scanf() in a
+loop to read in the values. Once during each loop cycle, it increments a counter to keep track
+of the number of entries. An if statement identifies temperatures below freezing and keeps
+track of the number of below-freezing days separately.
+
+#include <stdio.h>
+int main(void)
+{
+	const int FREEZING = 0;
+	float temperature;
+	int cold_days = 0;
+	int all_days = 0;
+	printf("Enter the list of daily low temperatures.\n");
+	printf("Use Celsius, and enter q to quit.\n");
+	while (scanf("%f", &temperature) == 1)
+	{
+		all_days++;
+		if (temperature < FREEZING)
+		cold_days++;
+	}
+	if (all_days != 0)
+		printf("%d days total: %.1f%% were below freezing.\n",
+			all_days, 100.0 * (float) cold_days / all_days);
+	if (all_days == 0)
+		printf("No data entered!\n");
+	return 0;
+}
+
+Here is a sample run:
+Enter the list of daily low temperatures.
+Use Celsius, and enter q to quit.
+12 5 -2.5 0 6 8 -3 -10 5 10 q
+10 days total: 30.0% were below freezing.
+
+3.2.2 Adding else to the if Statement
+	The simple form of an if statement gives you the choice of executing a statement (possibly
+compound) or skipping it. C also enables you to choose between two statements by using the
+if else form. Let’s use the if else form to fix an awkward segment.
+
+if (all_days != 0)
+	printf("%d days total: %.1f%% were below freezing.\n", all_days, 100.0 * (float) 	cold_days / all_days);
+if (all_days == 0)
+	printf("No data entered!\n");
+
+If the program finds that all_days is not equal to 0 , it should know that days must be 0
+without retesting, and it does. With if else , you can take advantage of that knowledge by
+rewriting the fragment this way:
+
+if (all_days!= 0)
+	printf("%d days total: %.1f%% were below freezing.\n",all_days, 100.0 * (float) 		cold_days / all_days);
+else
+	printf("No data entered!\n");
+
+Only one test is made. If the if test expression is true, the temperature data is printed. If it’s
+false, the warning message is printed.
+Note the general form of the if else statement:
+
+if ( expression )
+	statement1
+else
+	statement2
+
+3.3.3 The Conditional Operator: ?:
+The following is the general form of the conditional expression:
+
+expression1 ? expression2 : expression3
+
+If expression1 is true (nonzero), the whole conditional expression has the same value as
+expression2 . If expression1 is false (zero), the whole conditional expression has the same
+value as expression3 .
+You can use the conditional expression when you have a variable to which you want to assign
+one of two possible values. A typical example is setting a variable equal to the maximum of two
+values:
+max = (a > b) ? a : b;
+This sets max to a if it is greater than b , and to b otherwise.
+Usually, an if else statement can accomplish the same thing as the conditional operator. The
+conditional operator version, however, is more compact and, depending on the compiler, may
+result in more compact program code.
+
+3.3.4 Loop Aids: continue
+
+3.3.5 Multiple Choice: switch and break
+3.3.6 switch and if else
+3.3.7 The goto Statement

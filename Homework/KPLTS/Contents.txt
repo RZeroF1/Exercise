@@ -1,9 +1,190 @@
-Contents of Progaming Language (C)
+Contents of Programing Language (C)
 Chapter1 A Tutorial Introduction
+
+Chapter2 Type, Operation and Expressions
+
+Chapter3 Control Flow
+
+Chapter4 Functions and Program Structure
+
+Chapter5 Pointers and Arrays
+
+Chapter6 Structures
+
+Chapter7 Input and Output
+
+Please enter the number of chapter you want to browse('exit' to quit):
+
+Contents of Programing Language (C)
+Chapter1 A Tutorial Introduction
+	Section1 Getting Ready
+
+	Section2 Introducing C
+
 Chapter2 Type, Operation and Expressions
 Chapter3 Control Flow
 Chapter4 Functions and Program Structure
 Chapter5 Pointers and Arrays
 Chapter6 Structures
 Chapter7 Input and Output
-Please enter the number of chapter you want to browse('exit' to quit):
+Please enter the section number you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter1 A Tutorial Introduction
+	Section1 Getting Ready
+		1 Whence C
+
+		2 Why C
+
+		3 What Computers Do
+
+		4 Shortcoming
+
+		5 Language Standards
+	Section2 Introducing C
+Please enter the number in "Getting ready" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter1 A Tutorial Introduction
+	Section1 Getting Ready
+	Section2 Introducing C
+		1 The Structure of a Simple Program
+
+		2 Introduction to keywords
+
+		3 Main function
+
+		4 Library functions
+
+		5 Compilation and Linking
+
+		6 Characters and ASCII encoding
+
+		7 Debugging
+
+Please enter the number in "Introducing C" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter1 A Tutorial Introduction
+Chapter2 Type, Operation and Expressions
+	Section1 Basic C Data Types
+
+	Section2 Operators
+
+	Section3 Expressions
+ 
+	Section4 Statements
+
+Chapter3 Control Flow
+Chapter4 Functions and Program Structure
+Chapter5 Pointers and Arrays
+Chapter6 Structures
+Chapter7 Input and Output
+Please enter the section number you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter2 Type, Operation and Expressions
+	Section1 Basic C Data Types
+		1 int
+
+		2 float
+
+		3 long Constants and long long Constants
+
+		4 char
+
+		5 Signed or Unsigned?
+
+		6 The Bool Type
+
+		7 Types float, double, and long double
+
+		8 Conversion Specifiers and the Resulting Printed Output
+
+	Section2 Operators
+	Section3 Expressions
+	Section4 Statements
+Please enter the number in "Basic C Data Types" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter2 Type, Operation and Expressions
+	Section1 Basic C Data Types
+	Section2 Operators
+		1 Assignment Operator: =
+
+		2 Addition Operator: +
+
+		3 Subtraction Operator: –
+
+		4 Multiplication Operator: *
+
+		5 Division Operator: /
+
+		6 Modulus Operator: %
+
+		7 Increment and Decrement Operators: ++ and --
+
+		8 Forced type conversion
+
+		9 More Assignment Operators: += , -= , *= , /= , %=
+
+	Section3 Expressions
+	Section4 Statements
+Please enter the number in "Operators" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter2 Type, Operation and Expressions
+	Section1 Basic C Data Types
+	Section2 Operators
+	Section3 Expressions and Statements
+		1 Expressions
+
+		2 Statements
+
+Please enter the number in "Expressions and Statements" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter1 A Tutorial Introduction
+Chapter2 Type, Operation and Expressions
+Chapter3 Control Flow
+	Section1 C Control Statements:Looping
+
+	Section2 C Control Statements: Branching and Jumps
+
+Chapter4 Functions and Program Structure
+Chapter5 Pointers and Arrays
+Chapter6 Structures
+Chapter7 Input and Output
+Please enter the section number you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter3 Control Flow
+	Section1 C Control Statements:Looping
+		1 while loop
+
+		2 for loop
+
+		3 do while
+
+	Section2 C Control Statements: Branching and Jumps
+Please enter the number in "C Control Statements:Looping" you want to browse('back' to return):
+
+Contents of Programing Language (C)
+Chapter3 Control Flow
+	Section1 C Control Statements:Looping
+	Section2 C Control Statements: Branching and Jumps
+		1 The if Statement
+
+		2 Adding else to the if Statement
+
+		3 The Conditional Operator: ?:
+
+		4 Loop Aids: continue
+
+		5 Multiple Choice: switch and break
+
+		6 switch and if else
+
+		7 The goto Statement
+
+Please enter the number in "C Control Statements:Looping" you want to browse('back' to return):
