@@ -1,0 +1,16 @@
+Chapter4 Functions and Program Structure
+4.1 Functions
+4.1.3 Prototyping a Function with Arguments
+We used an ANSI C prototype to declare the function before it is used:
+void show_n_char(char ch, int num);
+When a function takes arguments, the prototype indicates their number and type by using a
+comma-separated list of the types. If you like, you can omit variable names in the prototype:
+void show_n_char(char, int);
+Using variable names in a prototype doesn’t actually create variables. It merely clarifies the fact
+that char means a char variable, and so on.
+Again, ANSI C also recognizes the older form of declaring a function, which is without an argument
+list:
+void show_n_char();
+This form eventually will be dropped from the standard. Even if it weren’t, the prototype
+format is a much better design, as you’ll see later. The main reason you need to know this form
+is so that you’ll recognize and understand it if you encounter it in older code.

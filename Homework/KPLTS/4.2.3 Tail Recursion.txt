@@ -1,0 +1,6 @@
+Chapter4 Functions and Program Structure
+4.2 Recursion
+4.2.3 Tail Recursion
+In the simplest form of recursion, the recursive call is at the end of the function, just before the
+return statement. This is called tail recursion , or end recursion , because the recursive call comes
+at the end. Tail recursion is the simplest form because it acts like a loop.

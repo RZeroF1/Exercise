@@ -1,0 +1,27 @@
+Chapter6 Structures
+6.1 Defining a Structure Variable
+6.1.3 Initializers for Structures
+C99 and C11 provide designated initializers for structures. The syntax is similar to that for
+designated initializers for arrays. However, designated initializers for structures use the dot
+operator and member names instead of brackets and indices to identify particular elements. For
+example, to initialize just the value member of a book structure, you would do this:
+struct book surprise = { .value = 10.99};
+
+You can use designated initializers in any order:
+struct book gift = { .value = 25.99,
+	.author = "James Broadfool",
+	.title = "Rue for the Toad"};
+
+Just as with arrays, a regular initializer following a designated initializer provides a value for the
+member following the designated member. Also, the last value supplied for a particular member
+is the value it gets. For example, consider this declaration:
+
+struct book gift= { .value = 18.90,
+	.author = "Philionna Pestle",
+	0.25};
+
+The value 0.25 is assigned to the value member because it is the one immediately listed after
+the author member in the structure declaration. The new value of 0.25 supersedes the value of
+18.90 provided earlier. Now that you have these basics in hand, you’re ready to expand your
+horizons and look at several ramifications of structures. You’ll see arrays of structures, structures
+of structures, pointers to structures, and functions that process structures.

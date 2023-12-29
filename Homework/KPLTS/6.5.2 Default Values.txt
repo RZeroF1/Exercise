@@ -1,0 +1,7 @@
+Chapter6 Structures
+6.5 Enumerated Types
+6.5.2 Default Values
+By default, the constants in the enumeration list are assigned the integer values 0, 1, 2, and so
+on. Therefore, the declaration
+enum kids {nippy, slats, skippy, nina, liz};
+results in nina having the value 3.

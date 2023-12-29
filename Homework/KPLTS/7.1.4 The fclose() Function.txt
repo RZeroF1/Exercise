@@ -1,0 +1,10 @@
+Chapter7 Input and Output
+7.1 Standard I/O
+7.1.4 The fclose() Function
+The fclose(fp) function closes the file identified by fp , flushing buffers as needed. For a
+program less casual than this one, you would check to see whether the file had been closed
+successfully. The function fclose() returns a value of 0 if successful, and EOF if not:
+if (fclose(fp) != 0)
+printf("Error in closing file %s\n", argv[1]);
+The fclose() function can fail if, for example, the disk is full, a removable storage device has
+been removed, or there has been an I/O error.

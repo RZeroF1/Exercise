@@ -1,0 +1,14 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.7 The goto Statement
+The goto statement, bulwark of the older versions of BASIC and FORTRAN, is available in C.
+However, C, unlike those two languages, can get along quite well without it. Kernighan and
+Ritchie refer to the goto statement as “infinitely abusable” and suggest that it “be used sparingly,
+if at all.” First, we will show you how to use goto . Then, we will show why you usually
+don’t need to.
+The goto statement has two parts—the goto and a label name. The label is named following
+the same convention used in naming a variable, as in this example:
+goto part2;
+For the preceding statement to work, the function must contain another statement bearing the
+part2 label. This is done by beginning a statement with the label name followed by a colon:
+part2: printf("Refined analysis:\n");

@@ -1,0 +1,11 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.1 Assignment Operator: =
+In C, the equal sign does not mean “equals.” Rather, it is a value-assigning operator. The
+statement
+bmw = 2002;
+assigns the value 2002 to the variable named bmw . That is, the item to the left of the = sign is
+the name of a variable, and the item on the right is the value assigned to the variable. The =
+symbol is called the assignment operator . Again, don’t think of the line as saying, "bmw equals
+2002 .” Instead, read it as “assign the value 2002 to the variable bmw .” The action goes from
+right to left for this operator.

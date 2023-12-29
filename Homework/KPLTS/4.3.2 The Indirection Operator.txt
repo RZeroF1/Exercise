@@ -1,0 +1,14 @@
+Chapter4 Functions and Program Structure
+4.3 Finding Addresses
+4.3.2 The Indirection Operator *
+Suppose you know that ptr points to bah , as shown here:
+ptr = &bah;
+Then you can use the indirection operator * (also called the dereferencing operator) to find the
+value stored in bah (don’t confuse this unary indirection operator with the binary * operator of
+multiplication—same symbol, different syntax):
+val = *ptr; // finding the value ptr points to
+The statements ptr = &bah; and val = *ptr; taken together amount to the following
+statement:
+val = bah;
+Using the address and indirection operators is a rather indirect way of accomplishing this
+result, hence the name “indirection operator.”

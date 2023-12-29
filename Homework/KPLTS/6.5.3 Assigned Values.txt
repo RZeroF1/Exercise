@@ -1,0 +1,10 @@
+Chapter6 Structures
+6.5 Enumerated Types
+6.5.3 Assigned Values
+You can choose the integer values that you want the constants to have. Just include the
+desired values in the declaration:
+enum levels {low = 100, medium = 500, high = 2000};
+If you assign a value to one constant but not to the following constants, the following
+constants will be numbered sequentially. For example, suppose you have this declaration:
+enum feline {cat, lynx = 10, puma, tiger};
+Then cat is 0 , by default, and lynx , puma , and tiger are 10 , 11 , and 12 , respectively.

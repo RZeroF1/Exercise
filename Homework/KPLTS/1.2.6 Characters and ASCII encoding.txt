@@ -1,0 +1,9 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.6 Characters and ASCII encoding
+Various characters can be struck on the keyboard such as: a, q, @, #, etc. These symbols are known as characters, which are enclosed in single quotes in C.
+in C. Characters are enclosed in single quotes like: 'a', 'b', '@'.
+We know that all data in a computer is stored in binary form, so what kind of binary system are these characters stored in memory?
+binary system in which each of these characters is stored in memory? If each of us makes up a binary sequence for each of these characters by ourselves, this is called coding, in order to
+In order to facilitate mutual communication and not to cause confusion, the American National Standards Institute (ANSI) later introduced a standard ASCII encoding, C
+The characters in the C language follow the ASCII encoding.

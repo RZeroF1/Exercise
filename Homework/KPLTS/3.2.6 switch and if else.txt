@@ -1,0 +1,13 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.6 switch and if else
+When should you use a switch and when should you use the if else construction? Often
+you don’t have a choice. You can’t use a switch if your choice is based on evaluating a floating-
+point variable or expression. Nor can you conveniently use a switch if a variable must fall
+into a certain range. It is simple to write the following:
+
+if (integer < 1000 && integer > 2)
+
+Unhappily, covering this range with a switch would involve setting up case labels for each
+integer from 3 to 999. However, if you can use a switch , your program often runs a little faster
+and takes less code.

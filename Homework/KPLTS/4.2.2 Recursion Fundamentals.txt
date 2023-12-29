@@ -1,0 +1,33 @@
+Chapter4 Functions and Program Structure
+4.2 Recursion
+4.2.2 Recursion Fundamentals
+Recursion can be confusing at first, so let’s look at a few basic points that will help you understand
+the process.
+First, each level of function call has its own variables. That is, the n of Level 1 is a different
+variable from the n of Level 2, so the program created four separate variables, each called n ,
+but each having a distinct value. When the program finally returned to the first-level call of
+up_and_down() , the original n still had the value 1 it started with.
+Second, each function call is balanced with a return. When program flow reaches the return at
+the end of the last recursion level, control passes to the previous recursion level. The program
+does not jump all the way back to the original call in main() . Instead, the program must move
+back through each recursion level, returning from one level of up_and_down() to the level of
+up_and_down() that called it.
+Third, statements in a recursive function that come before the recursive call are executed in the
+same order that the functions are called. For example, in Listing 9.6 , print statement #1 comes
+before the recursive call. It was executed four times in the order of the recursive calls: Level 1,
+Level 2, Level 3, and Level 4.
+Fourth, statements in a recursive function that come after the recursive call are executed in the
+opposite order from which the functions are called. For example, print statement #2 comes
+after the recursive call, and it was executed in the order: Level 4, Level 3, Level 2, Level 1. This
+feature of recursion is useful for programming problems involving reversals of order. You’ll see
+an example soon.
+Fifth, although each level of recursion has its own set of variables, the code itself is not duplicated.
+The code is a sequence of instructions, and a function call is a command to go to the
+beginning of that set of instructions. A recursive call, then, returns the program to the beginning
+of that instruction set. Aside from recursive calls creating new variables on each call, they
+are much like a loop. Indeed, sometimes recursion can be used instead of loops, and vice versa.
+Finally, it’s vital that a recursive function contain something to halt the sequence of recursive
+calls. Typically, a recursive function uses an if test, or equivalent, to terminate recursion when
+a function parameter reaches a particular value. For this to work, each call needs to use a different
+value for the parameter. For example, in the last example, up_and_down(n) calls up_and_
+down(n+1)

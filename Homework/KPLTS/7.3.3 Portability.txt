@@ -1,0 +1,19 @@
+Chapter7 Input and Output
+7.3 Adventures in Random Access: fseek() and ftell()
+7.3.3 Portability
+Ideally, fseek() and ftell() should conform to the Unix model. However, differences in real
+systems sometimes make this impossible. Therefore, ANSI provides lowered expectations for
+these functions. Here are some limitations:
+■ In the binary mode, implementations need not support the SEEK_END mode.A more portable approach 
+is to read the whole file byte-by-byte until the end. But reading the file sequentially to find 
+the end is slower than simply jumping to the end. The C preprocessor conditional compilation
+directives, discussed in Chapter 16 , “The C Preprocessor and the C Library,” provide a
+systematic way to handle alternative code choices.
+■ In the text mode, the only calls to fseek() that are guaranteed to work are these:
+Function 				Call Effect
+fseek(file, 0L, SEEK_SET) 		Go to the beginning of the file.
+fseek(file, 0L, SEEK_CUR) 		Stay at the current position.
+fseek(file, 0L, SEEK_END) 		Go to the file’s end.
+fseek(file,ftell-pos, SEEK_SET) 	Go to position ftell-pos from the beginning; ftellpos
+					is a value returned by ftell() .
+Fortunately, many common environments allow stronger implementations of these functions.

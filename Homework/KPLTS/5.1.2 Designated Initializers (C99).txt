@@ -1,0 +1,48 @@
+Chapter5 Pointers and Arrays
+5.1 Arrays
+5.1.2 Designated Initializers (C99)
+C99 added a new capability: designated initializers . This feature allows you to pick and choose
+which elements are initialized. Suppose, for example, that you just want to initialize the last
+element in an array. With traditional C initialization syntax, you also have to initialize every
+element preceding the last one:
+	int arr[6] = {0,0,0,0,0,212}; // traditional syntax
+With C99, you can use an index in brackets in the initialization list to specify a particular
+element:
+int arr[6] = {[5] = 212}; // initialize arr[5] to 212
+As with regular initialization, after you initialize at least one element, the uninitialized
+elements are set to 0 .
+#include <stdio.h>
+#define MONTHS 12
+int main(void)
+{
+	int days[MONTHS] = {31,28, [4] = 31,30,31, [1] = 29};
+	int i;
+	for (i = 0; i < MONTHS; i++)
+		printf("%2d %d\n", i + 1, days[i]);
+	return 0;
+}
+Here’s the output if the compiler supports this C99 feature:
+1 31
+2 29
+3 0
+4 0
+5 31
+6 30
+7 31
+8 0
+9 0
+10 0
+11 0
+12 0
+The output reveals a couple important features of designated initializers. First, if the code
+follows a designated initializer with further values, as in the sequence [4] = 31,30,31 , these
+further values are used to initialize the subsequent elements. That is, after initializing days[4]
+to 31 , the code initializes days[5] and days[6] to 30 and 31 , respectively. Second, if the code
+initializes a particular element to a value more than once, the last initialization is the one that
+takes effect. For example, in Listing 10.5 , the start of the initialization list initializes days[1] to
+28 , but that is overridden by the [1] = 29 designated initialization later.
+Suppose you don’t specify the array size?
+int stuff[] = {1, [6] = 23}; // what happens?
+int staff[] = {1, [6] = 4, 9, 10}; // what happens?
+The compiler will make the array big enough to accommodate the initialization values. So
+stuff will have seven elements, numbered 0-6, and staff will have two more elements, or 9.

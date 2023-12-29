@@ -1,0 +1,24 @@
+Chapter7 Input and Output
+7.2 File I/O: fprintf(), fscanf(), fgets(), and fputs()
+7.2.2 The fgets() and fputs() Functions
+You met fgets() in Chapter 11 . The first argument, as with the banished gets() , is the
+address (type char * ) where input should be stored. The second argument is an integer representing
+the maximum size of the input string. The final argument is the file pointer identifying
+the file to be read. A function call, then, looks like this:
+fgets(buf, STLEN, fp);
+Here, buf is the name of a char array, STLEN is the maximum size of the string, and fp is the
+pointer-to- FILE .
+As we saw earlier, the fgets() function reads input through the first newline character, until
+one fewer than the upper limit of characters is read, or until the end-of-file is found; fgets()
+then adds a terminating null character to form a string. Therefore, the upper limit represents
+the maximum number of characters plus the null character. If fgets() reads in a whole line
+before running into the character limit, it places the newline character, marking the end of the
+line into the string, just before the null character. The fgets() function returns the value NULL
+when it encounters EOF . You can use this to check for the end of a file. Otherwise, it returns
+the address passed to it.
+The fputs() function takes two arguments: first, an address of a string and then a file pointer.
+It writes the string found at the pointed-to location into the indicated file. Unlike puts() ,
+fputs() does not append a newline when it prints. A function call looks like this:
+fputs(buf, fp);
+Here, buf is the string address, and fp identifies the target file.
+Because fgets() keeps the newline and fputs() doesn’t add one, they work well in tandem.

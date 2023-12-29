@@ -1,0 +1,21 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.1 The Structure of a Simple Program
+A program consists of a collection of one or more functions, one of which must be
+called main() . The description of a function consists of a header and a body. The function header
+contains the function name along with information about the type of information passed to
+the function and returned by the function. You can recognize a function name by the parentheses,
+which may be empty. The body is enclosed by braces ( {} ) and consists of a series of
+statements, each terminated by a semicolon (see Figure 2.4 ). The example in this chapter had
+a declaration statement , announcing the name and type of variable being used. Then it had an
+assignment statement giving the variable a value. Next, there were three print statements , each
+calling the printf() function. The print statements are examples of function call statements .
+Finally, main() ends with a return statement .
+In short, a simple standard C program should use the following format:
+
+#include <stdio.h>
+int main(void)
+{
+	statements
+	return 0;
+}

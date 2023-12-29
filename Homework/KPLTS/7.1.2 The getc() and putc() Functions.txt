@@ -1,0 +1,20 @@
+Chapter7 Input and Output
+7.1 Standard I/O
+7.1.2 The getc() and putc() Functions
+The two functions getc() and putc() work very much like getchar() and putchar() . The
+difference is that you must tell these newcomers which file to use. So the following old standby
+means “get a character from the standard input”:
+ch = getchar();
+However, this statement means “get a character from the file identified by fp ”:
+ch = getc(fp);
+Similarly, this statement means “put the character ch into the file identified by the FILE
+pointer fpout ”:
+putc(ch, fpout);
+In the putc() argument list, the character comes first, and then the file pointer.
+The example uses stdout for the second argument of putc() . It is defined in stdio.h as being
+the file pointer associated with the standard output, so putc(ch,stdout) is the same as
+putchar(ch) . Indeed, the latter function is normally defined as being the former. Similarly,
+getchar() is defined as being getc() using the standard input.
+You may wonder why this example uses putc() instead of putchar() . One reason is to introduce
+the putc() function. The other is that you can easily convert this program to produce file
+output by using an argument other than stdout.

@@ -1,0 +1,29 @@
+Chapter2 Type, Operation and Expressions
+2.3 Expressions and Statements
+2.3.2 Statements
+Statements are the primary building blocks of a program. A program is a series of statements with
+some necessary punctuation. A statement is a complete instruction to the computer. In C, statements
+are indicated by a semicolon at the end. Therefore,
+legs = 4
+is just an expression (which could be part of a larger expression), but
+legs = 4;
+is a statement.
+The simplest possible statement is the null statement:
+; // null statement
+It does nothing, a special case of an instruction.
+More generally, what makes a complete instruction? First, C considers any expression to be
+a statement if you append a semicolon. (These are called expression statements .) Therefore, C
+won’t object to lines such as the following:
+8;
+3 + 4;
+However, these statements do nothing for your program and can’t really be considered sensible
+statements. More typically, statements change values and call functions:
+x = 25;
+++x;
+y = sqrt(x);
+Although a statement (or, at least, a sensible statement) is a complete instruction, not all
+complete instructions are statements. Consider the following statement:
+x = 6 + (y = 5);
+In it, the subexpression y = 5 is a complete instruction, but it is only part of the statement.
+Because a complete instruction is not necessarily a statement, a semicolon is needed to identify
+instructions that truly are statements.

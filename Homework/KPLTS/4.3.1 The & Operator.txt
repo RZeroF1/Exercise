@@ -1,0 +1,18 @@
+Chapter4 Functions and Program Structure
+4.3 Finding Addresses
+4.3.1 The & Operator
+One of the most important C concepts (and sometimes one of the most perplexing) is the
+pointer , which is a variable used to store an address. You’ve already seen that scanf() uses
+addresses for arguments. More generally, any C function that modifies a value in the calling
+function without using a return value uses addresses. We’ll cover functions using addresses
+next, beginning with the unary & operator. (The next chapter continues the exploration and
+exploitation of pointers.)
+The unary & operator gives you the address where a variable is stored. If pooh is the name of
+a variable, &pooh is the address of the variable. You can think of the address as a location in
+memory. Suppose you have the following statement:
+pooh = 24;
+Suppose that the address where pooh is stored is 0B76 . (PC addresses often are given as hexadecimal
+values.) Then the statement
+printf("%d %p\n", pooh, &pooh);
+would produce this ( %p is the specifier for addresses):
+24 0B76

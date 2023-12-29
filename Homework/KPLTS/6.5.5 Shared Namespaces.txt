@@ -1,0 +1,17 @@
+Chapter6 Structures
+6.5 Enumerated Types
+6.5.5 Shared Namespaces
+C uses the term namespace to identify parts of a program in which a name is recognized. Scope
+is part of the concept: Two variables having the same name but in different scopes don’t
+conflict; two variables having the same name in the same scope do conflict. There also is a
+category aspect to namespaces. Structure tags, union tags, and enumeration tags in a particular
+scope all share the same namespace, and that namespace is different from the one used by
+ordinary variables. What this means is that you can use the same name for one variable and
+one tag in the same scope without causing an error, but you can’t declare two tags of the same
+name or two variables of the same name in the same scope. For example, the following doesn’t
+cause a conflict in C:
+struct rect { double x; double y; };
+int rect; // not a conflict in C
+
+However, it can be confusing to use the same identifier in two different ways; also, C++ doesn’t
+allow this because it puts tags and variable names into the same namespace.

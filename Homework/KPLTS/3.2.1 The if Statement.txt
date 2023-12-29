@@ -1,0 +1,38 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.1 The if Statement
+Let’s start with a simple example of an if statement, shown. This program reads
+in a list of daily low temperatures (in Celsius) and reports the total number of entries and the
+percentage that were below freezing (that is, below zero degrees Celsius). It uses scanf() in a
+loop to read in the values. Once during each loop cycle, it increments a counter to keep track
+of the number of entries. An if statement identifies temperatures below freezing and keeps
+track of the number of below-freezing days separately.
+
+#include <stdio.h>
+int main(void)
+{
+	const int FREEZING = 0;
+	float temperature;
+	int cold_days = 0;
+	int all_days = 0;
+	printf("Enter the list of daily low temperatures.\n");
+	printf("Use Celsius, and enter q to quit.\n");
+	while (scanf("%f", &temperature) == 1)
+	{
+		all_days++;
+		if (temperature < FREEZING)
+		cold_days++;
+	}
+	if (all_days != 0)
+		printf("%d days total: %.1f%% were below freezing.\n",
+			all_days, 100.0 * (float) cold_days / all_days);
+	if (all_days == 0)
+		printf("No data entered!\n");
+	return 0;
+}
+
+Here is a sample run:
+Enter the list of daily low temperatures.
+Use Celsius, and enter q to quit.
+12 5 -2.5 0 6 8 -3 -10 5 10 q
+10 days total: 30.0% were below freezing.

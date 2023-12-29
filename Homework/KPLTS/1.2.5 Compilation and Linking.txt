@@ -1,0 +1,10 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.5 Compilation and Linking
+C is a compiled computer language, C source code is a text file, the text file itself can not be executed, must be translated by 
+the compiler and linker to generate a binary executable file, the executable file can be executed.
+The text files themselves cannot be executed, but must be translated by a compiler and linked by a linker to produce 
+a binary executable file, which can then be executed.
+C language code is placed in the .c suffix file, to get the final run of the executable program, the middle has to go through 
+the compilation and linking two
+To get the final executable program, it has to go through two processes: compilation and linking.

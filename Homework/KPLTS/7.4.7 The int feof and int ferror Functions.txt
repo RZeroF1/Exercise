@@ -1,0 +1,9 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.7 The int feof(FILE *fp) and int ferror(FILE *fp) Functions
+When the standard input functions return EOF , this usually means they have reached the end
+of a file. However, it can also indicate that a read error has occurred. The feof() and ferror()
+functions enable you to distinguish between the two possibilities. The feof() function returns
+a nonzero value if the last input call detected the end-of-file, and it returns zero otherwise. The
+ferror() function returns a nonzero value if a read or write error has occurred, and it returns
+zero otherwise.

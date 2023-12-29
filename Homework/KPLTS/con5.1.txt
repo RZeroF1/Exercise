@@ -1,0 +1,16 @@
+Contents of Programing Language (C)
+Chapter5 Pointers and Arrays
+	Section1 Arrays
+		1 Initialization
+
+		2 Designated Initializers (C99)
+
+		3 Specifying an Array Size
+
+		4 Initializing a Two-Dimensional Array
+
+		5 More Dimensions
+
+	Section2 Arrays and Pointers
+	Section3 Pointer Operations
+Please enter the section number in "Arrays" you want to browse('back' to return):

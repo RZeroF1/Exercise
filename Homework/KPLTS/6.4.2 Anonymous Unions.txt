@@ -1,0 +1,27 @@
+Chapter6 Structures
+6.4 Unions: A Quick Look
+6.4.2 Anonymous Unions
+Anonymous unions work much the same as anonymous structures. That is, an anonymous
+union is an unnamed member union of a structure or union. For instance, we can redefine the
+car_data structure as follows:
+struct owner {
+	char socsecurity[12];
+	...
+};
+struct leasecompany {
+	char name[40];
+	char headquarters[40];
+	...
+};
+struct car_data {
+	char make[15];
+	int status; /* 0 = owned, 1 = leased */
+union {
+	struct owner owncar;
+	struct leasecompany leasecar;
+};
+...
+};
+
+Now, if flits is a car_data structure, we can use flits.owncar.socsecurity instead of
+flits.ownerinfo.owncar.socsecurity.

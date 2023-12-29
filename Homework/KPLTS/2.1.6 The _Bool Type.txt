@@ -1,0 +1,8 @@
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.6 The _Bool Type
+The _Bool type is a C99 addition that’s used to represent Boolean values—that is, the logical
+values true and false . Because C uses the value 1 for true and 0 for false , the Bool type
+really is just an integer type, but one that, in principle, only requires 1 bit of memory, because
+that is enough to cover the full range from 0 to 1.
+Programs use Boolean values to choose which code to execute next.

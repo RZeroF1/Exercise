@@ -1,0 +1,28 @@
+Chapter4 Functions and Program Structure
+4.3 Finding Addresses
+4.3.3 Declaring Pointers
+You already know how to declare int variables and other fundamental types. How do you
+declare a pointer variable? You might guess that the form is like this:
+pointer ptr; // not the way to declare a pointer/
+Why not? Because it is not enough to say that a variable is a pointer. You also have to specify
+the kind of variable to which the pointer points. The reason is that different variable types take
+up different amounts of storage, and some pointer operations require knowledge of that storage
+size. Also, the program has to know what kind of data is stored at the address. A long and a
+float might use the same amount of storage, but they store numbers quite differently. Here’s
+how pointers are declared:
+int * pi; // pi is a pointer to an integer variable
+char * pc; // pc is a pointer to a character variable
+float * pf, * pg; // pf, pg are pointers to float variables
+The type specification identifies the type of variable pointed to, and the asterisk ( * ) identifies
+the variable itself as a pointer. The declaration int * pi; says that pi is a pointer and that
+*pi is type int.
+The space between the * and the pointer name is optional. Often, programmers use the space
+in a declaration and omit it when dereferencing a variable.
+The value ( *pc ) of what pc points to is of type char . What of pc itself? We describe it as being
+of type “pointer to char .” The value of pc is an address, and it is represented internally as an
+unsigned integer on most systems. However, you shouldn’t think of a pointer as an integer
+type. There are things you can do with integers that you can’t do with pointers, and vice versa.
+For example, you can multiply one integer by another, but you can’t multiply one pointer by
+another. So a pointer really is a new type, not an integer type. Therefore, as mentioned before,
+ANSI C provides the %p form specifically for pointers.
+

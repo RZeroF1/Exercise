@@ -1,0 +1,35 @@
+Chapter5 Pointers and Arrays
+5.3 Pointer Operations
+5.3.3 Pointers to Multidimensional Arrays
+How do pointers relate to multidimensional arrays? And why would you want to know?
+Functions that work with multidimensional arrays do so with pointers, so you need some
+further pointer background before working with such functions. As to the first question, let’s
+look at some examples now to find the answer. To simplify the discussion, let’s use a small
+array. Suppose you have this declaration:
+int zippo[4][2]; /* an array of arrays of ints */
+Then zippo , being the name of an array, is the address of the first element of the array. In this
+case, the first element of zippo is itself an array of two int s, so zippo is the address of an array
+of two int s. Let’s analyze that further in terms of pointer properties:
+■ Because zippo is the address of the array’s first element, zippo has the same value as
+&zippo[0] . Next, zippo[0] is itself an array of two integers, so zippo[0] has the same
+value as &zippo[0][0] , the address of its first element, an int . In short, zippo[0] is
+the address of an int -sized object, and zippo is the address of a two- int -sized object.
+Because both the integer and the array of two integers begin at the same location, both
+zippo and zippo[0] have the same numeric value.
+■ Adding 1 to a pointer or address yields a value larger by the size of the referred-to object.
+In this respect, zippo and zippo[0] differ, because zippo refers to an object two int s
+in size, and zippo[0] refers to an object one int in size. Therefore, zippo + 1 has a
+different value from zippo[0] + 1 .
+■ Dereferencing a pointer or an address (applying the * operator or else the [] operator
+with an index) yields the value represented by the referred-to object. Because zippo[0] is
+the address of its first element, ( zippo[0][0] ), *(zippo[0]) represents the value stored
+in zippo[0][0] , an int value. Similarly, *zippo represents the value of its first element,
+zippo[0] , but zippo[0] itself is the address of an int . It’s the address &zippo[0][0] ,
+so *zippo is &zippo[0][0] . Applying the dereferencing operator to both expressions
+implies that **zippo equals *&zippo[0][0] , which reduces to zippo[0][0] , an int .
+In short, zippo is the address of an address and must be dereferenced twice to get an
+ordinary value. An address of an address or a pointer of a pointer is an example of double
+indirection .
+Clearly, increasing the number of array dimensions increases the complexity of the pointer
+view. At this point, most students of C begin realizing why pointers are considered one of the
+more difficult aspects of the language.

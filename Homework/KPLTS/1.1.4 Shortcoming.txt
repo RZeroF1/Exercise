@@ -1,0 +1,11 @@
+Chapter1 A Tutorial Introduction
+1.1Getting Ready
+1.1.4 Shortcoming
+C does have some faults. Often, as with people, faults and virtues are opposite sides of the
+same feature. For example, we’ve mentioned that C’s freedom of expression also requires added
+responsibility. C’s use of pointers (something you can look forward to learning about in this
+book), in particular, means that you can make programming errors that are difficult to trace. As
+one computer preliterate once commented, the price of liberty is eternal vigilance.
+C’s conciseness, combined with its wealth of operators, make it possible to prepare code that is extremely difficult to follow. You aren’t compelled to write obscure code, but the opportunity
+is there. After all, what other language has a yearly Obfuscated Code contest?
+There are more virtues and, undoubtedly, a few more faults. Rather than delve further into the matter.

@@ -1,0 +1,10 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.4 Library functions
+In order to stop repeating the implementation of common code, allowing programmers to improve development efficiency,
+the C language standard specifies a set of functions, which are then implemented by different
+These functions are then implemented by different compiler vendors according to the standard and made available to programmers.
+These functions form a library of functions called the standard library.
+library, and these functions are also called library functions. On top of that, some compiler vendors may extend the library with 
+additional functions (which may not be supported by other compilers).
+(which may not be supported by other compilers)

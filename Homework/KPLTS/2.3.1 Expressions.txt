@@ -1,0 +1,33 @@
+Chapter2 Type, Operation and Expressions
+2.3 Expressions and Statements
+2.3.1 Expressions
+An expression consists of a combination of operators and operands. (An operand, recall, is what
+an operator operates on.) The simplest expression is a lone operand, and you can build in
+complexity from there. Here are some expressions:
+4
+-6
+4+21
+a*(b + c/d)/20
+q = 5*2
+x = ++q % 3
+q > 3
+Expressions, and Statements
+As you can see, the operands can be constants, variables, or combinations of the two. Some
+expressions are combinations of smaller expressions, called subexpressions . For example, c/d is a
+subexpression of the fourth example.
+Every Expression Has a Value
+An important property of C is that every C expression has a value. To find the value, you
+perform the operations in the order dictated by operator precedence. The value of the first few
+expressions we just listed is clear, but what about the ones with = signs? Those expressions
+simply have the same value that the variable to the left of the = sign receives. Therefore, the
+expression q=5*2 as a whole has the value 10 . What about the expression q > 3 ? Such relational 
+expressions have the value 1 if true and 0 if false. Here are some expressions and their
+values:
+Expression 		Value
+-4 + 6 			2
+c = 3 + 8 		11
+5 > 3 			1
+6 + (c = 3 + 8) 	17
+The last expression looks strange! However, it is perfectly legal (but ill-advised) in C because 
+it is the sum of two subexpressions, each of which has a value.
+

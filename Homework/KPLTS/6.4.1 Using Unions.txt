@@ -1,0 +1,51 @@
+Chapter6 Structures
+6.4 Unions: A Quick Look
+6.4.1 Using Unions
+Here is how you can use a union:
+fit.digit = 23; // 23 is stored in fit; 2 bytes used
+fit.bigfl = 2.0; // 23 cleared, 2.0 stored; 8 bytes used
+fit.letter = 'h'; // 2.0 cleared, h stored; 1 byte used
+The dot operator shows which data type is being used. Only one value is stored at a time. You
+can’t store a char and an int at the same time, even though there is enough space to do so. It
+is your responsibility to write the program so that it keeps track of the data type currently being
+stored in a union.
+You can use the -> operator with pointers to unions in the same fashion that you use the operator
+with pointers to structures:
+pu = &fit;
+x = pu->digit; // same as x = fit.digit
+
+The next sequence shows what not to do:
+fit.letter = 'A';
+flnum = 3.02*fit.bigfl; // ERROR ERROR ERROR
+This sequence is wrong because a char type is stored, but the next line assumes that the
+content of fit is a double type.
+However, sometimes it can be useful to use one member to place values into a union and to
+then use a different member for viewing the contents. Listing 15.4 in the next chapter shows
+an example.
+Another place you might use a union is in a structure for which the stored information
+depends on one of the members. For example, suppose you have a structure representing an
+automobile. If the automobile is owned by the user, you want a structure member describing
+the owner. If the automobile is leased, you want the member to describe the leasing company.
+Then you can do something along the following lines:
+struct owner {
+	char socsecurity[12];
+	...
+};
+struct leasecompany {
+	char name[40];
+	char headquarters[40];
+	...
+};
+union data {
+	struct owner owncar;
+	struct leasecompany leasecar;
+};
+struct car_data {
+	char make[15];
+	int status; /* 0 = owned, 1 = leased */
+	union data ownerinfo;
+	...
+};
+
+Suppose flits is a car_data structure. Then if flits.status were 0, the program could use
+flits.ownerinfo.owncar.socsecurity

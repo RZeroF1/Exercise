@@ -1,0 +1,5 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.4 Loop Aids: continue
+This statement can be used in the three loop forms. When encountered, it causes the rest of an
+iteration to be skipped and the next iteration to be started.

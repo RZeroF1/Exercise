@@ -1,0 +1,22 @@
+Chapter5 Pointers and Arrays
+5.1 Arrays
+5.1.1 Initialization
+Arrays are often used to store data needed for a program. For example, a 12-element array can
+store the number of days in each month. In cases such as these, it’s convenient to initialize the
+array at the beginning of a program. Let’s see how it is done.
+You know you can initialize single-valued variables (sometimes called scalar variables) in a
+declaration with expressions such as
+int fix = 1;
+float flax = PI * 2;
+where, one hopes, PI was defined earlier as a macro. C extends initialization to arrays with a
+new syntax, as shown next:
+
+int main(void)
+{
+	int powers[8] = {1,2,4,6,8,16,32,64}; /* ANSI C and later */
+	...
+}
+
+As you can see, you initialize an array by using a comma-separated list of values enclosed in
+braces. You can use spaces between the values and the commas, if you want. The first element
+( powers[0] ) is assigned the value 1 , and so on.

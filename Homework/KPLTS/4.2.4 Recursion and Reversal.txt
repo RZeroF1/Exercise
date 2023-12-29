@@ -1,0 +1,26 @@
+Chapter4 Functions and Program Structure
+4.2 Recursion
+4.2.4 Recursion and Reversal
+Now let’s look at a problem in which recursion’s ability to reverse order is handy. (This is a
+case for which recursion is simpler than using a loop.) The problem is this: Write a function
+that prints the binary equivalent of an integer. Binary notation represents numbers in terms of
+powers of 2. Just as 234 in decimal means 2 × 10^2 + 3 × 10^1 + 4 × 10^0 , so 101 in binary means
+1 × 2^2 + 0 × 2^1 + 1 × 2^0. Binary numbers use only the digits 0 and 1.You need a method, or algorithm. 
+How can you, say, find the binary equivalent of 5? Well, odd
+numbers must have a binary representation ending in 1. Even numbers end in 0, so you can
+determine whether the last digit is a 1 or a 0 by evaluating 5 % 2 . If the result is 1, 5 is odd,
+and the last digit is 1. In general, if n is a number, the final digit is n % 2 , so the first digit you
+find is the last digit you want to print. This suggests using a recursive function in which n %
+2 is calculated before the recursive call but in which it is printed after the recursive call. That
+way, the first value calculated is the last value printed.
+To get the next digit, divide the original number by 2. This is the binary equivalent of moving
+the decimal point one place to the left so that you can examine the next binary digit. If this
+value is even, the next binary digit is 0. If it is odd, the binary digit is 1. For example, 5/2 is
+2 (integer division), so the next digit is 0. This gives 01 so far. Now repeat the process. Divide
+2 by 2 to get 1. Evaluate 1 % 2 to get 1, so the next digit is 1. This gives 101. When do you
+stop? You stop when the result of dividing by 2 is less than 2 because as long as it is 2 or
+greater, there is one more binary digit. Each division by 2 lops off one more binary digit until
+you reach the end. (If this seems confusing to you, try working through the decimal analogy.
+The remainder of 628 divided by 10 is 8, so 8 is the last digit. Integer division by 10 yields 62,
+and the remainder from dividing 62 by 10 is 2, so that’s the next digit, and so on.)
+

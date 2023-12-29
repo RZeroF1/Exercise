@@ -1,0 +1,21 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.8 An fread() and fwrite() Example
+Let’s use some of these functions in a program that appends the contents from a list of files
+to the end of another file. One problem is passing the file information to the program. This
+can be done interactively or by using command-line arguments. We’ll take the first approach,
+which suggests a plan along the following lines:
+■ Request a name for the destination file and open it.
+■ Use a loop to request source files.
+■ Open each source file in turn in the read mode and add it to the append file.
+To illustrate setvbuf() , we’ll use it to specify a different buffer size. The next stage of refinement
+examines opening the append file. We will use the following steps:
+1. Open the destination file in the append mode.
+2. If this cannot be done, quit.
+3. Establish a 4,096-byte buffer for this file.
+4. If this cannot be done, quit.
+Similarly, we can refine the copying portion by doing the following for each file:
+■ If it is the same as the append file, skip to the next file.
+■ If it cannot be opened in the read mode, skip to the next file.
+■ Add the contents of the file to the append file.
+For a grand finale, the program rewinds the append file to the beginning and displays the contents.

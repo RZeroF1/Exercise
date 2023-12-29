@@ -1,0 +1,38 @@
+Chapter4 Functions and Program Structure
+4.1 Functions
+4.1.1 Creating and Using a Simple Function
+Our modest first goal is to create a function that types 40 asterisks in a row. To give the function
+a context, let’s use it in a program that prints a simple letterhead. This example presents the
+complete program. It consists of the functions main() and starbar() .
+
+#include <stdio.h>
+#define NAME "GIGATHINK, INC."
+#define ADDRESS "101 Megabuck Plaza"
+#define PLACE "Megapolis, CA 94904"
+#define WIDTH 40
+
+void starbar(void); /* prototype the function */
+
+int main(void)
+{
+	starbar();
+	printf("%s\n", NAME);
+	printf("%s\n", ADDRESS);
+	printf("%s\n", PLACE);
+	starbar(); /* use the function */
+	return 0;
+}
+void starbar(void) /* define the function */
+{
+	int count;
+	for (count = 1; count <= WIDTH; count++)
+	putchar('*');
+	putchar('\n');
+}
+
+The output is as follows:
+****************************************
+GIGATHINK, INC.
+101 Megabuck Plaza
+Megapolis, CA 94904
+****************************************

@@ -1,0 +1,6 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.4 Multiplication Operator: *
+Multiplication is indicated by the * symbol. The statement
+cm = 2.54 * inch;
+multiplies the variable inch by 2.54 and assigns the answer to cm .

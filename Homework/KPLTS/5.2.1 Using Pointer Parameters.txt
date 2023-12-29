@@ -1,0 +1,32 @@
+Chapter5 Pointers and Arrays
+5.2 Arrays and Pointers
+5.2.1 Using Pointer Parameters
+A function working on an array needs to know where to start and stop. The sum() function
+uses a pointer parameter to identify the beginning of the array and an integer parameter to
+indicate how many elements to process. (The pointer parameter also identifies the type of data
+in the array.) But this is not the only way to tell a function what it needs to know. Another
+way to describe the array is by passing two pointers, with the first indicating where the array
+starts (as before) and the second where the array ends.
+
+#include <stdio.h>
+#define SIZE 10
+int sump(int * start, int * end);
+int main(void)
+{
+	int marbles[SIZE] = {20,10,5,39,4,16,19,26,31,20};
+	long answer;
+	answer = sump(marbles, marbles + SIZE);
+	printf("The total number of marbles is %ld.\n", answer);
+	return 0;
+}
+/* use pointer arithmetic */
+int sump(int * start, int * end)
+{
+	int total = 0;
+	while (start < end)
+	{
+		total += *start; // add value to total
+		start++; // advance pointer to next element
+	}
+	return total;
+}

@@ -1,0 +1,19 @@
+Contents of Programing Language (C)
+Chapter6 Structures
+	Section1 Defining a Structure Variable
+	Section2 Arrays of Structures
+	Section3 Pointers to Structures
+	Section4 Unions: A Quick Look
+	Section5 Enumerated Types
+		1 enum Constants
+
+		2 Default Values
+
+		3 Assigned Values
+
+		4 enum Usage
+
+		5 Shared Namespaces
+
+	Section6 typedef: A Quick Look
+Please enter the number in "Enumerated Types" you want to browse('back' to return):

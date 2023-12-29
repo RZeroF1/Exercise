@@ -1,0 +1,23 @@
+Contents of Programing Language (C)
+Chapter7 Input and Output
+	Section1 Standard I/O
+	Section2 File I/O: fprintf(), fscanf(), fgets(), and fputs()
+	Section3 Adventures in Random Access: fseek() and ftell()
+	Section4 Other Standard I/O Functions
+		1 The int ungetc(int c, FILE *fp) Function
+
+		2 The int fflush() Function
+
+		3 The int setvbuf() Function
+
+		4 Binary I/O: fread() and fwrite()
+
+		5 The size_t fwrite() Function
+
+		6 The size_t fread() Function
+
+		7 The int feof(FILE *fp) and int ferror(FILE *fp) Functions
+
+		8 An fread() and fwrite() Example
+
+Please enter the number in Section4 you want to browse('back' to return):

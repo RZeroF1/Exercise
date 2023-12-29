@@ -1,0 +1,11 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.3 Subtraction Operator: –
+The subtraction operator causes the number after the – sign to be subtracted from the number
+before the sign. The statement
+
+takehome = 224.00 – 24.00;
+
+assigns the value 200.0 to takehome .
+The + and – operators are termed binary , or dyadic, operators, meaning that they require two
+operands.

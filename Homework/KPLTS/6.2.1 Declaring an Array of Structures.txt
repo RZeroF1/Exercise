@@ -1,0 +1,8 @@
+Chapter6 Structures
+6.2 Arrays of Structures
+6.2.1 Declaring an Array of Structures
+Declaring an array of structures is like declaring any other kind of array. Here’s an example:
+struct book library[MAXBKS];
+This declares library to be an array with MAXBKS elements. Each element of this array is a
+structure of book type. Thus, library[0] is one book structure, library[1] is a second book
+structure, and so on.

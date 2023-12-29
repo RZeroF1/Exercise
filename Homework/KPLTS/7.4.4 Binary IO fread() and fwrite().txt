@@ -1,0 +1,35 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.4 Binary I/O: fread() and fwrite()
+The fread() and fwrite() functions are next on the list, but first some background. The
+standard I/O functions you’ve used to this point are text oriented, dealing with characters and
+strings. What if you want to save numeric data in a file? True, you can use fprintf() and the
+%f format to save a floating-point value, but then you are saving it as a sequence of characters.
+For example, the code
+double num = 1./3.;
+fprintf(fp,"%f", num);
+saves num as a sequence of eight characters: 0.333333 . Using a %.2f specifier saves it as four
+characters: 0.33 . Using a %.12f specifier saves it as 14 characters: 0.333333333333 . Changing
+the specifier alters the amount of space needed to store the value; it can also result in different
+values being stored. After the value of num is stored as 0.33 , there is no way to get back the
+full precision when the file is read. In general, fprintf() converts numeric values to character
+data, possibly altering the value.
+The most accurate and consistent way to store a number is to use the same pattern of bits that
+the computer does. Therefore, a double value should be stored in a size double unit. When
+data is stored in a file using the same representation that the program uses, we say that the data
+is stored in binary form . There is no conversion from numeric forms to character sequences. For
+standard I/O, the fread() and fwrite() functions provide this binary service.
+Actually, as you probably recall, all data is stored in binary form. Even characters are stored
+using the binary representation of the character code. However, if all data in the file is interpreted
+as character codes, we say that the file contains text data. If some or all of the data is
+interpreted as numeric data in binary form, we say that the file contains binary data. (Also, files
+in which the data represents machine-language instructions are binary files.)
+The uses of the terms binary and text can get confusing. ANSI C recognizes two modes for
+opening files: binary and text. Many operating systems recognize two file formats: binary and
+text. Information can be stored or read as binary data or as text data. These are all related,
+but not identical. You can open a text format file in the binary mode. You can store text in
+a binary format file. You can use getc() to copy files containing binary data. In general,
+however, you use the binary mode to store binary data in a binary format file. Similarly, you
+most often use text data in text files opened in the text format. (Files produced by word processors
+typically are binary files because they contain a lot of nontext information describing fonts
+and formatting.)

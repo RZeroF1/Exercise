@@ -1,0 +1,19 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.3 The int setvbuf() Function
+The prototype for setvbuf() is this:
+int setvbuf(FILE * restrict fp, char * restrict buf, int mode, size_t size);
+The setvbuf() function sets up an alternative buffer to be used by the standard I/O functions.
+It is called after the file has been opened and before any other operations have been performed
+on the stream. The pointer fp identifies the stream, and buf points to the storage to be used.
+If the value of buf is not NULL , you must create the buffer. For instance, you could declare an
+array of 1,024 char s and pass the address of that array. However, if you use NULL for the value
+of buf , the function allocates a buffer itself. The size variable tells setvbuf() how big the
+array is. (The size_t type is a derived integer type; see Chapter 5 , “Operators, Expressions, and
+Statements.”) The mode is selected from the following choices: IOFBF means fully buffered
+(buffer flushed when full), IOLBF means line-buffered (buffer flushed when full or when a
+newline is written), and IONBF means nonbuffered. The function returns zero if successful,
+nonzero otherwise.
+Suppose you have a program that works with stored data objects having, say, a size of 3,000
+bytes each. You could use setvbuf() to create a buffer whose size is a multiple of the data
+object’s size.

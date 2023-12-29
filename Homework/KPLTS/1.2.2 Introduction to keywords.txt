@@ -1,0 +1,7 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.2 Introduction to keywords
+There are a number of reserved name symbols in C language, such as: int, if, return, these symbols 
+are called reserved words or keywords.Keywords.
+- These symbols are called reserved words or keywords. Keywords have special meanings and are reserved for use in the C language.
+- Programmers cannot duplicate keywords when creating their own identifiers.

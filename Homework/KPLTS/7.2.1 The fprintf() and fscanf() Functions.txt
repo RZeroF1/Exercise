@@ -1,0 +1,37 @@
+Chapter7 Input and Output
+7.2 File I/O: fprintf(), fscanf(), fgets(), and fputs()
+7.2.1 The fprintf() and fscanf() Functions
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 41
+int main(void)
+{
+	FILE *fp;
+	char words[MAX];
+	if ((fp = fopen("wordy", "a+")) == NULL)
+	{
+		fprintf(stdout,"Can't open \"wordy\" file.\n");
+		exit(EXIT_FAILURE);
+	}
+	puts("Enter words to add to the file; press the #");
+	puts("key at the beginning of a line to terminate.");
+	while ((fscanf(stdin,"%40s", words) == 1) && (words[0] != '#'))
+	fprintf(fp, "%s\n", words);
+	puts("File contents:");
+	rewind(fp); /* go back to beginning of file */
+	while (fscanf(fp,"%s",words) == 1)
+		puts(words);
+	puts("Done!");
+	if (fclose(fp) != 0)
+	fprintf(stderr,"Error closing file\n");
+	return 0;
+}
+
+This program enables you to add words to a file. By using the "a+" mode, the program can
+both read and write in the file. The first time the program is used, it creates the wordy file and
+enables you to place words in it, one word per line. When you use the program subsequently,
+it enables you to add (append) words to the previous contents. The append mode only enables
+you to add material to the end of the file, but the "a+" mode does enable you to read the
+whole file. The rewind() command takes the program to the file beginning so that the final
+while loop can print the file contents. Note that rewind() takes a file pointer argument.

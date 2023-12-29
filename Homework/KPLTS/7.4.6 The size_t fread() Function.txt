@@ -1,0 +1,15 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.6 The size_t fread() Function
+The prototype for fread() is this:
+size_t fread(void * restrict ptr, size_t size, size_t nmemb,
+FILE * restrict fp);
+The fread() function takes the same set of arguments that fwrite() does. This time ptr is
+the address of the memory storage into which file data is read, and fp identifies the file to be
+read. Use this function to read data that was written to a file using fwrite() . For example, to
+recover the array of 10 doubles saved in the previous example, use this call:
+double earnings[10];
+fread(earnings, sizeof (double), 10, fp);
+This call copies 10 size double values into the earnings array.
+The fread() function returns the number of items successfully read. Normally, this equals
+nmemb , but it can be less if there is a read error or if the end-of-file is reached.

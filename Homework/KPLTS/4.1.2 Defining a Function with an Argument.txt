@@ -1,0 +1,30 @@
+Chapter4 Functions and Program Structure
+4.1 Functions
+4.1.2 Defining a Function with an Argument: Formal Parameters
+The function definition begins with the following ANSI C function header:
+void show_n_char(char ch, int num)
+This line informs the compiler that show_n_char() uses two arguments called ch and num ,
+that ch is type char , and that num is type int . Both the ch and num variables are called formal
+arguments or (the phrase currently in favor) formal parameters . Like variables defined inside the
+function, formal parameters are local variables, private to the function. That means you don’t
+have to worry if the names duplicate variable names used in other functions. These variables
+will be assigned values each time the function is called.
+Note that the ANSI C form requires that each variable be preceded by its type. That is, unlike
+the case with regular declarations, you can’t use a list of variables of the same type:
+void dibs(int x, y, z) /* invalid function header */
+void dubs(int x, int y, int z) /* valid function header */
+ANSI C also recognizes the pre-ANSI C form but characterizes it as obsolescent:
+void show_n_char(ch, num)
+char ch;
+int num;
+Here, the parentheses contain the list of argument names, but the types are declared afterward.
+Note that the arguments are declared before the brace that marks the start of the function’s
+body, but ordinary local variables are declared after the brace. This form does enable you to use
+comma-separated lists of variable names if the variables are of the same type, as shown here:
+void dibs(x, y, z)
+int x, y, z; /* valid */
+The intent of the standard is to phase out the pre-ANSI C form. You should be aware of it so
+that you can understand older code, but you should use the modern form for new programs.
+(C99 and C11 continue to warn of impending obsolescence.)
+Although the show_n_char() function accepts values from main() , it doesn’t return a value.
+Therefore, show_n_char() is type void .

@@ -1,0 +1,11 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.5 Division Operator: /
+C uses the / symbol to represent division. The value to the left of the / is divided by the value
+to the right. For example, the following gives four the value of 4.0 :
+four = 12.0/3.0;
+Division works differently for integer types than it does for floating types. Floating-type division
+gives a floating-point answer, but integer division yields an integer answer. An integer
+can’t have a fractional part, which makes dividing 5 by 3 awkward, because the answer does
+have a fractional part. In C, any fraction resulting from integer division is discarded. This
+process is called truncation .

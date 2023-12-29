@@ -1,0 +1,25 @@
+Chapter6 Structures
+6.3 Pointers to Structures
+6.3.1 Declaring and Initializing a Structure Pointer
+Declaration is as easy as can be:
+struct guy * him;
+First is the keyword struct , then the structure tag guy , and then an asterisk ( * ) followed by
+the pointer name. The syntax is the same as for the other pointer declarations you have seen.
+This declaration does not create a new structure, but the pointer him can now be made to point
+to any existing structure of the guy type. For instance, if barney is a structure of the guy type,
+you could do this:
+him = &barney;
+Unlike the case for arrays, the name of a structure is not the address of the structure; you need
+to use the & operator.
+In the example, fellow is an array of structures, which means that fellow[0] is a structure, so
+the code initializes him by making it point to fellow[0] :
+him = &fellow[0];
+The first two output lines show the success of this assignment. Comparing the two lines, you
+see that him points to fellow[0] , and him + 1 points to fellow[1] . Note that adding 1 to
+him adds 84 to the address. In hexadecimal, 874 − 820 = 54 (hex) = 84 (base 10) because each
+guy structure occupies 84 bytes of memory: names.first is 20, names.last is 20, favfood is
+20, job is 20, and income is 4, the size of float on our system. Incidentally, on some systems,
+the size of a structure may be greater than the sum of its parts. That’s because a system’s alignment
+requirements for data may cause gaps. For example, a system may have to place each
+member at an even address or at an address that is a multiple of four. Such structures might
+end up with unused “holes” in them.

@@ -1,0 +1,13 @@
+Contents of Programing Language (C)
+Chapter6 Structures
+	Section1 Defining a Structure Variable
+	Section2 Arrays of Structures
+		1 Declaring an Array of Structures
+
+		2 Identifying Members of an Array of Structures
+
+	Section3 Pointers to Structures
+	Section4 Unions: A Quick Look
+	Section5 Enumerated Types
+	Section6 typedef: A Quick Look
+Please enter the number in "Arrays of Structures" you want to browse('back' to return):

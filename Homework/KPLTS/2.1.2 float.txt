@@ -1,0 +1,18 @@
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.2 float
+A floating-point number more or less corresponds to what mathematicians call a real number .
+Real numbers include the numbers between the integers. Some floating-point numbers are
+2.75, 3.16E7, 7.00, and 2e–8. Notice that adding a decimal point makes a value a floating-point
+value. So 7 is an integer type but 7.00 is a floating-point type. Obviously, there is more than
+one way to write a floating-point number. We will discuss the e-notation more fully later,
+but, in brief, the notation 3.16E7 means to multiply 3.16 by 10 to the 7th power; that is, by 1
+followed by 7 zeros. The 7 would be termed the exponent of 10.
+The key point here is that the scheme used to store a floating-point number is different from
+the one used to store an integer. Floating-point representation involves breaking up a number
+into a fractional part and an exponent part and storing the parts separately. Therefore, the
+7.00 in this list would not be stored in the same manner as the integer 7, even though both
+have the same value. The decimal analogy would be to write 7.0 as 0.7E1. Here, 0.7 is the fractional
+part, and the 1 is the exponent part. Figure 3.3 shows another example of floating-point
+storage. A computer, of course, would use binary numbers and powers of two instead of powers
+of 10 for internal storage.

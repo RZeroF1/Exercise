@@ -1,0 +1,25 @@
+Chapter6 Structures
+6.1 Defining a Structure Variable
+6.1.2 Gaining Access to Structure Members
+A structure is like a “superarray,” in which one element can be char , the next element float ,
+and the next an int array. You can access the individual elements of an array by using a
+subscript. How do you access individual members of a structure? Use a dot ( . ), the structure
+member operator. For example, library.value is the value portion of library . You can
+use library.value exactly as you would use any other float variable. Similarly, you can use
+library.title exactly as you would use a char array. Therefore, the program uses expressions
+such as
+s_gets(library.title, MAXTITL);
+and
+scanf("%f", &library.value);
+In essence, .title , .author , and .value play the role of subscripts for a book structure.
+Note that although library is a structure, library.value is a float type and is used like any
+other float type. For example, scanf("%f",...) requires the address of a float location,
+and that is what &library.float is. The dot has higher precedence than the & here, so the
+expression is the same as &(library.float) .
+If you had a second structure variable of the same type, you would use the same method:
+struct book bill, newt;
+s_gets(bill.title, MAXTITL);
+s_gets(newt.title, MAXTITL);
+The .title refers to the first member of the book structure. Notice how the initial program
+prints the contents of the structure library in two different formats. This illustrates the
+freedom you have in using the members of a structure.

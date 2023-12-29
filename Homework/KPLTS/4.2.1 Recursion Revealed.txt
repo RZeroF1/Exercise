@@ -1,0 +1,58 @@
+Chapter4 Functions and Program Structure
+4.2 Recursion
+4.2.1 Recursion Revealed
+To see what’s involved, let’s look at an example. The function main()]calls the
+up_and_down() function. We’ll term this the “first level of recursion.” Then up_and_down()
+calls itself; we’ll call that the “second level of recursion.” The second level calls the third
+level, and so on. This example is set up to go four levels. To provide an inside look at what is
+happening, the program not only displays the value of the variable n , it also displays &n , which
+is the memory address at which the variable n is stored. (This chapter discusses the & operator
+more fully later. The printf() function uses the %p specifier for addresses. If your system
+doesn’t support that format, try %u or %lu .)
+
+/* recur.c -- recursion illustration */
+#include <stdio.h>
+
+void up_and_down(int);
+
+int main(void)
+{
+	up_and_down(1);
+	return 0;
+}
+void up_and_down(int n)
+{
+	printf("Level %d: n location %p\n", n, &n); // 1
+	if (n < 4)
+		up_and_down(n+1);
+	printf("LEVEL %d: n location %p\n", n, &n); // 2
+}
+
+The output on one system looks like this:
+Level 1: n location 0x0012ff48
+Level 2: n location 0x0012ff3c
+Level 3: n location 0x0012ff30
+Level 4: n location 0x0012ff24
+LEVEL 4: n location 0x0012ff24
+LEVEL 3: n location 0x0012ff30
+LEVEL 2: n location 0x0012ff3c
+LEVEL 1: n location 0x0012ff48
+
+Level 2 call to be assigned the value 2 , so print statement #1 prints Level 2 . Similarly, the
+next two calls lead to printing Level 3 and Level 4 .
+When Level 4 is reached, n is 4 , so the if test fails. The up_and_down() function is not called
+again. Instead, the Level 4 call proceeds to print statement #2, which prints LEVEL 4 , because
+n is 4 . Then it reaches the return statement. At this point, the Level 4 call ends, and control
+passes back to the function that called it (the Level 3 call). The last statement executed in the
+Level 3 call was the call to Level 4 in the if statement. Therefore, Level 3 resumes with the
+following statement, which is print statement #2. This causes LEVEL 3 to be printed. Then
+Level 3 ends, passing control to Level 2, which prints LEVEL 2 , and so on.
+Note that each level of recursion uses its own private n variable. You can tell this is so by
+looking at the address values. (Of course, different systems, in general, will report different
+addresses, possibly in a different format. The critical point is that the address on the Level 1
+line is the same as the address on the LEVEL 1 line, and so on.)
+If you find this a bit confusing, think about when you have a chain of function calls, with
+fun1() calling fun2() , fun2() calling fun3() , and fun3() calling fun4() . When fun4()
+finishes, it passes control back to fun3() . When fun3() finishes, it passes control back to
+fun2() . And when fun2() finishes, it passes control back to fun1() . The recursive case works
+the same, except that fun1() , fun2() , fun3() , and fun4() are all the same function.

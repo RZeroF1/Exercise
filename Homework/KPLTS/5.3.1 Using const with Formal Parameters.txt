@@ -1,0 +1,27 @@
+Chapter5 Pointers and Arrays
+5.3 Pointer Operations
+5.3.1 Using const with Formal Parameters
+With K&R C, the only way to avoid this sort of error is to be vigilant. Since ANSI C, there is
+an alternative. If a function’s intent is that it not change the contents of the array, use the
+keyword const when declaring the formal parameter in the prototype and in the function definition.
+For example, the prototype and definition for sum() should look like this:
+int sum(const int ar[], int n); /* prototype */
+int sum(const int ar[], int n) /* definition */
+{
+	int i;
+	int total = 0;
+	for( i = 0; i < n; i++)
+	total += ar[i];
+	return total;
+}
+This tells the compiler that the function should treat the array pointed to by ar as though the
+array contains constant data. Then, if you accidentally use an expression such as ar[i]++ , the
+compiler can catch it and generate an error message, telling you that the function is attempting
+to alter constant data.
+It’s important to understand that using const this way does not require that the original array
+be constant; it just says that the function has to treat the array as though it were constant. Using
+const this way provides the protection for arrays that passing by value provides for fundamental
+types; it prevents a function from modifying data in the calling function. In general, if you
+write a function intended to modify an array, don’t use const when declaring the array parameter.
+If you write a function not intended to modify an array, do use const when declaring the
+array parameter.

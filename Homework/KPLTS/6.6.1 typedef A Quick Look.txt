@@ -1,0 +1,85 @@
+Chapter6 Structures
+6.6 typedef: A Quick Look
+6.6.1 typedef: A Quick Look
+The typedef facility is an advanced data feature that enables you to create your own name for
+a type. It is similar to #define in that respect, but with three differences:
+■ Unlike #define , typedef is limited to giving symbolic names to types only and not to
+values.
+■ The typedef interpretation is performed by the compiler, not the preprocessor.
+■ Within its limits, typedef is more flexible than #define .
+Let’s see how typedef works. Suppose you want to use the term BYTE for one-byte numbers.
+You simply define BYTE as if it were a char variable and precede the definition by the keyword
+typedef , like so:
+typedef unsigned char BYTE;
+From then on, you can use BYTE to define variables:
+BYTE x, y[10], * z;
+The scope of this definition depends on the location of the typedef statement. If the definition
+is inside a function, the scope is local, confined to that function. If the definition is
+outside a function, the scope is global.
+Often, uppercase letters are used for these definitions to remind the user that the type name is
+really a symbolic abbreviation, but you can use lowercase, too:
+typedef unsigned char byte;
+The same rules that govern the valid names of variables govern the name used for a typedef .
+Creating a name for an existing type might seem a bit frivolous, but it can be useful. With
+the preceding example, using BYTE instead of unsigned char helps document that you plan
+to use BYTE variables to represent numbers rather than character codes. Using typedef also
+helps increase portability. For example, we’ve mentioned the size_t type, which represents
+the type returned by the sizeof operator, and the time_t type, which represents the type of
+value returned by the time() function. The C standard says sizeof and time() return integer
+types but leaves it up to the implementation to determine which type. The reason for this lack
+of specificity is that the C standards committee feels that no one choice is likely to be the best
+choice for every computer platform. So they make up a new type name, such as time_t , and
+let the implementation use a typedef to set that name to some specific type. That way, they
+can provide a general prototype such as the following:
+time_t time(time_t *);
+On one system, time_t can be unsigned long ; on another, it can be unsigned long long .
+As long as you include the time.h header file, your program can access the appropriate definition,
+and you can declare time_t variables in your code.
+Some features of typedef can be duplicated with a #define . For example,
+#define BYTE unsigned char
+causes the preprocessor to replace BYTE with unsigned char . Here is one that can’t be duplicated
+with a #define :
+typedef char * STRING;
+Without the keyword typedef , this example would identify STRING itself as a pointer-to- char .
+With the keyword, it makes STRING an identifier for pointers-to- char . Therefore,
+STRING name, sign;
+means
+char * name, * sign;
+Suppose, instead, you did this:
+#define STRING char *
+Then
+STRING name, sign;
+would translate to the following:
+char * name, sign;
+In this case, only name would be a pointer.
+You can use typedef with structures, too:
+typedef struct complex {
+float real;
+float imag;
+} COMPLEX;
+You can then use the type COMPLEX instead of the struct called complex to represent complex
+numbers. One reason to use typedef is to create convenient, recognizable names for types that
+turn up often. For instance, many people prefer to use STRING or its equivalent, as in the earlier
+example.
+You can omit a tag when using typedef to name a structure type:
+typedef struct {double x; double y;} rect;
+Suppose you use the typedef like this:
+rect r1 = {3.0, 6.0};
+rect r2;
+This is translated to
+struct {double x; double y;} r1= {3.0, 6.0};
+struct {double x; double y;} r2;
+r2 = r1;
+If two structures are declared without a tag but with identical members (with both member
+names and types matching), C considers the two structures to be of the same type, so assigning
+r1 to r2 is a valid operation.
+A second reason for using typedef is that typedef names are often used for complicated types.
+For example, the declaration
+typedef char (* FRPTC ()) [5];
+makes FRPTC announce a type that is a function that returns a pointer to a five-element array
+of char . (See the upcoming discussion on fancy declarations in the next section.)
+When using typedef , bear in mind that it does not create new types; instead, it just creates
+convenient labels. This means, for example, that variables using the STRING type we created
+can be used as arguments for functions expecting type pointer-to- char .
+With structures, unions, and typedef , C gives you the tools for efficient and portable data
+handling.

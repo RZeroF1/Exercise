@@ -1,0 +1,11 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.8 Forced type conversion
+Another special type of operator is forced type conversion, which has a simple syntax of the following form:
+See the code:
+
+int a = 3.14;
+//a is the type of int, 3.14 is the type of double, the two sides of the type is not consistent, the compiler 
+will report a warning!To eliminate this warning, we can use forced type conversion:
+1 int a = (int)3.14; // meaning that 3.14 is forced type conversion to int, this forced type conversion only 
+takes the integer part of 3.14

@@ -1,0 +1,7 @@
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.1 int
+An integer is a number with no fractional part. In C, an integer is never written with a decimal
+point. Examples are 2, –23, and 2456. Numbers such as 3.14, 0.22, and 2.000 are not integers.
+Integers are stored as binary numbers. The integer 7, for example, is written 111 in binary.
+Therefore, to store this number in an 8-bit byte, just set the first 5 bits to 0 and the last 3 bits to 1

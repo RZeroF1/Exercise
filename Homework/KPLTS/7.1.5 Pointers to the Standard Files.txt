@@ -1,0 +1,12 @@
+Chapter7 Input and Output
+7.1 Standard I/O
+7.1.5 Pointers to the Standard Files
+The stdio.h file associates three file pointers with the three standard files automatically
+opened by C programs:
+Standard File 	File Pointer 	Normally
+Standard input 	stdin 		Your keyboard
+Standard output stdout 		Your screen
+Standard error 	stderr 		Your screen
+These pointers are all type pointer-to- FILE , so they can be used as arguments to the standard
+I/O functions, just as fp was in the example. Let’s move on to an example that creates a new
+file and writes to it.

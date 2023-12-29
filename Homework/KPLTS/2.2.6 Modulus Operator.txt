@@ -1,0 +1,13 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.6 Modulus Operator: %
+The modulus operator is used in integer arithmetic. It gives the remainder that results when the
+integer to its left is divided by the integer to its right. For example, 13 % 5 (read as “13 modulo
+5”) has the value 3, because 5 goes into 13 twice, with a remainder of 3. Don’t bother trying to
+use this operator with floating-point numbers. It just won’t work.
+At first glance, this operator might strike you as an esoteric tool for mathematicians, but it
+is actually rather practical and helpful. One common use is to help you control the flow of a
+program. Suppose, for example, you are working on a bill-preparing program designed to add in
+an extra charge every third month. Just have the program evaluate the month number modulo
+3 (that is, month % 3 ) and check to see whether the result is 0. If it is, the program adds in
+the extra charge.

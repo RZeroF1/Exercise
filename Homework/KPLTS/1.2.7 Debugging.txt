@@ -1,0 +1,12 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.7 Debugging
+The compiler can get confused. A true syntax error in one location might cause the
+compiler to mistakenly think it has found other errors. For instance, because the example does
+not declare n2 and n3 correctly, the compiler might think it has found further errors whenever
+those variables are used. In fact, if you can’t make sense of all the reported errors, rather than
+trying to correct all the reported errors at once, you should correct just the first one or two and
+then recompile; some of the other errors may go away. Continue in this way until the program
+works. Another common compiler trick is reporting the error a line late. For instance, the
+compiler may not deduce that a semicolon is missing until it tries to compile the next line. So
+if the compiler complains of a missing semicolon on a line that has one, check the line before.

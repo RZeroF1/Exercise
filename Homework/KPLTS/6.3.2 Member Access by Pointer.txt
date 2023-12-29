@@ -1,0 +1,23 @@
+Chapter6 Structures
+6.3 Pointers to Structures
+6.3.2 Member Access by Pointer
+The pointer him is pointing to the structure fellow[0] . How can you use him to get a value of
+a member of fellow[0] ? The third output line shows two methods.
+The first method, and the most common, uses a new operator, -> . This operator is formed by
+typing a hyphen ( - ) followed by the greater-than symbol ( > ). We have these relationships:
+him->income is barney.income if him == &barney
+him->income is fellow[0].income if him == &fellow[0]
+In other words, a structure pointer followed by the -> operator works the same way as a structure
+name followed by the . (dot) operator. (You can’t properly say him.income because him is
+not a structure name.)
+It is important to note that him is a pointer, but him->income is a member of the pointed-to
+structure. So in this case, him->income is a float variable.
+The second method for specifying the value of a structure member follows from this sequence:
+If him == &fellow[0] , then *him == fellow[0] because & and * are reciprocal operators.
+Hence, by substitution, you have the following:
+fellow[0].income == (*him).income
+The parentheses are required because the . operator has higher precedence than * .
+In summary, if him is a pointer to a type guy structure named barney , the following are all
+equivalent:
+barney.income == (*him).income == him->income // assuming him == &barney
+Now let’s look at the interaction between structures and functions.

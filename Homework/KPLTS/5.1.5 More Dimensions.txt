@@ -1,0 +1,15 @@
+Chapter5 Pointers and Arrays
+5.1 Arrays
+5.1.5 More Dimensions
+Everything we have said about two-dimensional arrays can be generalized to three-dimensional
+arrays and further. You can declare a three-dimensional array this way:
+int box[10][20][30];
+You can visualize a one-dimensional array as a row of data, a two-dimensional array as a table
+of data, and a three-dimensional array as a stack of data tables. For example, you can visualize
+the box array as 10 two-dimensional arrays (each 20×30) stacked atop each other.
+The other way to think of box is as an array of arrays of arrays. That is, it is a 10-element array,
+each element of which is a 20-element array. Each 20-element array then has elements that
+are 30-element arrays. Or, you can simply think of arrays in terms of the number of indices
+needed.
+Typically, you would use three nested loops to process a three-dimensional array, four nested
+loops to process a four-dimensional array, and so on.

@@ -1,0 +1,18 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.3 The Conditional Operator: ?:
+The following is the general form of the conditional expression:
+
+expression1 ? expression2 : expression3
+
+If expression1 is true (nonzero), the whole conditional expression has the same value as
+expression2 . If expression1 is false (zero), the whole conditional expression has the same
+value as expression3 .
+You can use the conditional expression when you have a variable to which you want to assign
+one of two possible values. A typical example is setting a variable equal to the maximum of two
+values:
+max = (a > b) ? a : b;
+This sets max to a if it is greater than b , and to b otherwise.
+Usually, an if else statement can accomplish the same thing as the conditional operator. The
+conditional operator version, however, is more compact and, depending on the compiler, may
+result in more compact program code.

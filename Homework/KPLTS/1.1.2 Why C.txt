@@ -1,0 +1,8 @@
+Chapter1 A Tutorial Introduction
+1.1Getting Ready
+1.1.2 Why C
+During the past four decades, C has become one of the most important and popular programming
+languages. It has grown because people try it and like it. In the past decade or two, many
+have moved from C to languages such as C++, Objective C, and Java, but C is still an important
+language in its own right, as well a migration path to these others. As you learn C, you will
+recognize its many virtues.

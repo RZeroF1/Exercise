@@ -1,0 +1,17 @@
+Chapter5 Pointers and Arrays
+5.2 Arrays and Pointers
+5.2.2 Comment: Pointers and Arrays
+As you have seen, functions that process arrays actually use pointers as arguments, but you do
+have a choice between array notation and pointer notation for writing array-processing functions.
+Using array notation, as in Listing 10.10 , makes it more obvious that the function is
+working with arrays. Also, array notation has a more familiar look to programmers versed in
+other languages, such as FORTRAN, Pascal, Modula-2, or BASIC. Other programmers might be
+more accustomed to working with pointers and might find the pointer notation, such as that
+in Listing 10.11 , more natural.
+As far as C goes, the two expressions ar[i] and *(ar+i) are equivalent in meaning. Both
+work if ar is the name of an array, and both work if ar is a pointer variable. However, using an
+expression such as ar++ only works if ar is a pointer variable.
+Pointer notation, particularly when used with the increment operator, is closer to machine
+language and, with some compilers, leads to more efficient code. However, many programmers
+believe that the programmer’s main concerns should be correctness and clarity and that code
+optimization should be left to the compiler.

@@ -1,0 +1,64 @@
+Chapter5 Pointers and Arrays
+5.3 Pointer Operations
+5.3.4 Pointer Compatibility
+The rules for assigning one pointer to another are tighter than the rules for numeric types. For
+example, you can assign an int value to a double variable without using a type conversion,
+but you can’t do the same for pointers to these two types:
+int n = 5;
+double x;
+int * p1 = &n;
+double * pd = &x;
+x = n; // implicit type conversion
+pd = p1; // compile-time error
+These restrictions extend to more complex types. Suppose we have the following declarations:
+int * pt;
+int (*pa)[3];
+int ar1[2][3];
+int ar2[3][2];
+int **p2; // a pointer to a pointer
+Then we have the following:
+pt = &ar1[0][0]; // both pointer-to-int
+pt = ar1[0]; // both pointer-to-int
+pt = ar1; // not valid
+pa = ar1; // both pointer-to-int[3]
+pa = ar2; // not valid
+p2 = &pt; // both pointer-to-int *
+*p2 = ar2[0]; // both pointer-to-int
+p2 = ar2; // not valid
+Notice that the nonvalid assignments all involve two pointers that don’t point to the same
+type. For example, pt points to a single int , but ar1 points to an array of three int s. Similarly,
+pa points to an array of two int s, so it is compatible with ar1 , but not with ar2 , which points
+to an array of two int s.
+The last two examples are somewhat tricky. The variable p2 is a pointer-to-pointer-to- int ,
+whereas ar2 is a pointer-to-array-of-two- int s (or, more concisely, pointer-to- int[2] ). So p2
+and ar2 are of different types, and you can’t assign ar2 to p2 . But *p2 is type pointer-to- int ,
+making it compatible with ar2[0] . Recall that ar2[0] is a pointer to its first element, ar2[0]
+[0] , making ar2[0] type pointer-to- int also.
+In general, multiple indirection is tricky. For instance, consider the next snippet of code:
+int x = 20;
+const int y = 23;
+int * p1 = &x;
+const int * p2 = &y;
+const int ** pp2;
+p1 = p2; // not safe -- assigning const to non-const
+p2 = p1; // valid -- assigning non-const to const
+pp2 = &p1; // not safe -- assigning nested pointer types
+As we saw earlier, assigning a const pointer to a non- const pointer is not safe, because you
+could use the new pointer to alter const data. While the code would compile, perhaps with a
+warning, the effect of executing the code is undefined. But assigning a non- const pointer to a
+const pointer is okay, provided that you’re dealing with just one level of indirection:
+p2 = p1; // valid -- assigning non-const to const
+But such assignments no longer are safe when you go to two levels of indirection. For instance,
+you could do something like this:
+const int **pp2;
+int *p1;
+const int n = 13;
+pp2 = &p1; // allowed, but const qualifier disregarded
+*pp2 = &n; // valid, both const, but sets p1 to point at n
+*p1 = 10; // valid, but tries to change const n
+What happens? As mentioned before, the standard says the effect of altering const data using
+a non-const pointer is undefined. For instance, compiling a short program with this code
+using gcc in Terminal (OS X’s access to the underlying Unix system) led to n ending up with
+the value 13, but using clang in the same environment led to a value of 10. Both compilers did
+warn about incompatible pointer types. You can, of course, ignore the warnings, but you’d best
+not rely upon the results of running the program.

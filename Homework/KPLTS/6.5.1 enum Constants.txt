@@ -1,0 +1,13 @@
+Chapter6 Structures
+6.5 Enumerated Types
+6.5.1 enum Constants
+Just what are blue and red ? Technically, they are type int constants. For example, given the
+preceding enumeration declaration, you can try this:
+printf("red = %d, orange = %d\n", red, orange);
+Here is the output:
+red = 0, orange = 1
+What has happened is that red has become a named constant representing the integer 0.
+Similarly, the other identifiers are named constants representing the integers 1 through 5.
+You can use an enumerated constant anywhere you can use an integer constant. For example,
+you can use them as sizes in array declarations, and you can use them as labels in a switch
+statement.

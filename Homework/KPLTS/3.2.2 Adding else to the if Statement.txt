@@ -1,0 +1,29 @@
+Chapter3 Control Flow
+3.2 C Control Statements: Branching and Jumps
+3.2.2 Adding else to the if Statement
+	The simple form of an if statement gives you the choice of executing a statement (possibly
+compound) or skipping it. C also enables you to choose between two statements by using the
+if else form. Let’s use the if else form to fix an awkward segment.
+
+if (all_days != 0)
+	printf("%d days total: %.1f%% were below freezing.\n", all_days, 100.0 * (float) 	cold_days / all_days);
+if (all_days == 0)
+	printf("No data entered!\n");
+
+If the program finds that all_days is not equal to 0 , it should know that days must be 0
+without retesting, and it does. With if else , you can take advantage of that knowledge by
+rewriting the fragment this way:
+
+if (all_days!= 0)
+	printf("%d days total: %.1f%% were below freezing.\n",all_days, 100.0 * (float) 		cold_days / all_days);
+else
+	printf("No data entered!\n");
+
+Only one test is made. If the if test expression is true, the temperature data is printed. If it’s
+false, the warning message is printed.
+Note the general form of the if else statement:
+
+if ( expression )
+	statement1
+else
+	statement2

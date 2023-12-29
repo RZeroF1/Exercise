@@ -1,0 +1,45 @@
+Chapter5 Pointers and Arrays
+5.3 Pointer Operations
+5.3.2 More About const
+Earlier, you saw that you can use const to create symbolic constants:
+const double PI = 3.14159;
+That was something you could do with the #define directive, too, but const additionally lets
+you create constant arrays, constant pointers, and pointers to constants.
+Listing 10.4 showed how to use the const keyword to protect an array:
+#define MONTHS 12
+...
+const int days[MONTHS] = {31,28,31,30,31,30,31,31,30,31,30,31};
+If the program code subsequently tries to alter the array, you’ll get a compile-time error
+message:
+days[9] = 44; /* compile error */
+Pointers to constants can’t be used to change values. Consider the following code:
+double rates[5] = {88.99, 100.12, 59.45, 183.11, 340.5};
+const double * pd = rates; // pd points to beginning of the array
+The second line of code declares that the type double value to which pd points is a const .
+That means you can’t use pd to change pointed-to values:
+*pd = 29.89; // not allowed
+pd[2] = 222.22; // not allowed
+rates[0] = 99.99; // allowed because rates is not const
+Whether you use pointer notation or array notation, you are not allowed to use pd to change
+the value of pointed-to data. Note, however, that because rates was not declared as a constant,
+you can still use rates to change values. Also, note that you can make pd point somewhere
+else:
+pd++; /* make pd point to rates[1] -- allowed */
+A pointer-to-constant is normally used as a function parameter to indicate that the function
+won’t use the pointer to change data. For example, the show_array() function from Listing
+10.14 could have been prototyped as
+void show_array(const double *ar, int n);
+There are some rules you should know about pointer assignments and const . First, it’s valid to
+assign the address of either constant data or non-constant data to a pointer-to-constant:
+double rates[5] = {88.99, 100.12, 59.45, 183.11, 340.5};
+const double locked[4] = {0.08, 0.075, 0.0725, 0.07};
+const double * pc = rates; // valid
+pc = locked; // valid
+pc = &rates[3]; // valid
+However, only the addresses of non-constant data can be assigned to regular pointers:
+double rates[5] = {88.99, 100.12, 59.45, 183.11, 340.5};
+const double locked[4] = {0.08, 0.075, 0.0725, 0.07};
+double * pnc = rates; // valid
+pnc = locked; // not valid
+pnc = &rates[3]; // valid
+This is a reasonable rule.

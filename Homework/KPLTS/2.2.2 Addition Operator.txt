@@ -1,0 +1,16 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.2 Addition Operator: +
+The addition operator causes the two values on either side of it to be added together. For
+example, the statement
+printf("%d", 4 + 20);
+causes the number 24 to be printed, not the expression
+4 + 20.
+The values (operands) to be added can be variables as well as constants. Therefore, the
+statement
+income = salary + bribes;
+causes the computer to look up the values of the two variables on the right, add them, and
+then assign this total to the variable income .
+As a reminder, note that income , salary , and bribes all are modifiable lvalues because each
+identifies a data object that could be assigned a value, but the expression salary + bribes is
+an rvalue, a calculated value not identified with a particular memory location.

@@ -1,0 +1,11 @@
+Chapter1 A Tutorial Introduction
+1.1Getting Ready
+1.1.5 Language Standards
+At first, there was no official standard for C. Instead, the first edition of The C Programming
+Language by Brian Kernighan and Dennis Ritchie (1978) became the accepted standard, usually
+referred to as K&R C or Classic C . In particular, the “C Reference Manual” in that book’s appendix
+acted as the guide to C implementations. Compilers, for example, would claim to offer a
+full K&R implementation. However, although this appendix defined the C language, it did not
+define the C library. More than most languages, C depends on its library, so there is need for a
+library standard, too. In the absence of any official standard, the library supplied with the Unix
+implementation became a factor standard.

@@ -1,0 +1,31 @@
+Chapter3 Control Flow
+3.1 C Control Statements:Looping
+3.1.3 do while
+The while loop and the for loop are both entry-condition loops. The test condition is checked
+before each iteration of the loop, so it is possible for the statements in the loop to never
+execute. C also has an exit-condition loop, in which the condition is checked after each iteration
+of the loop, guaranteeing that statements are executed at least once. This variety is called a
+do while loop.
+
+#include <stdio.h>
+int main(void)
+{
+	const int secret_code = 13;
+	int code_entered;
+do{
+	printf("To enter the triskaidekaphobia therapy club,\n");
+	printf("please enter the secret code number: ");
+	scanf("%d", &code_entered);
+} while (code_entered != secret_code);
+	printf("Congratulations! You are cured!\n");
+	return 0;
+}
+The program reads input values until the user enters 13 . The following is a
+sample run:
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 12
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 14
+To enter the triskaidekaphobia therapy club,
+please enter the secret code number: 13
+Congratulations! You are cured!

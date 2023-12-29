@@ -1,0 +1,21 @@
+Chapter6 Structures
+6.1 Defining a Structure Variable
+6.1.1 Initializing a Structure
+You’ve seen how to initialize variables and arrays:
+	int count = 0;
+	int fibo[7] = {0,1,1,2,3,5,8};
+Can a structure variable be initialized, too? Yes, it can. To initialize a structure (any storage
+class for ANSI C and later, but excluding automatic variables for pre-ANSI C), you use a syntax
+similar to that used for arrays:
+
+struct book library = {
+	"The Pious Pirate and the Devious Damsel",
+	"Renee Vivotte",
+	1.95
+};
+
+In short, you use a comma-separated list of initializers enclosed in braces. Each initializer
+should match the type of the structure member being initialized. Therefore, you can initialize
+the title member to a string and the value member to a number. To make the associations
+more obvious, we gave each member its own line of initialization, but all the compiler needs
+are commas to separate one member’s initialization from the next.

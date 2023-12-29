@@ -1,0 +1,34 @@
+Chapter5 Pointers and Arrays
+5.1 Arrays
+5.1.4 Initializing a Two-Dimensional Array
+Initializing a two-dimensional array builds on the technique for initializing a one-dimensional
+array. First, recall that initializing a one-dimensional array looks like this:
+sometype ar1[5] = {val1, val2, val3, val4, val5};
+Here val1 , val2 , and so on are each a value appropriate for sometype . For example, if
+sometype were int , val1 might be 7 , or if sometype were double , val1 might be 11.34 . But
+rain is a five-element array for which each element is of type array-of-12- float . So, for rain ,
+val1 would be a value appropriate for initializing a one-dimensional array of float , such as
+the following:
+{4.3,4.3,4.3,3.0,2.0,1.2,0.2,0.2,0.4,2.4,3.5,6.6}
+That is, if sometype is array-of-12- double , val1 is a list of 12 double values. Therefore, we
+need a comma-separated list of five of these things to initialize a two-dimensional array, such
+as rain :
+const float rain[YEARS][MONTHS] =
+{
+	{4.3,4.3,4.3,3.0,2.0,1.2,0.2,0.2,0.4,2.4,3.5,6.6},
+	{8.5,8.2,1.2,1.6,2.4,0.0,5.2,0.9,0.3,0.9,1.4,7.3},
+	{9.1,8.5,6.7,4.3,2.1,0.8,0.2,0.2,1.1,2.3,6.1,8.4},
+	{7.2,9.9,8.4,3.3,1.2,0.8,0.4,0.0,0.6,1.7,4.3,6.2},
+	{7.6,5.6,3.8,2.8,3.8,0.2,0.0,0.0,0.0,1.3,2.6,5.2}
+};
+This initialization uses five embraced lists of numbers, all enclosed by one outer set of braces.
+The data in the first interior set of braces is assigned to the first row of the array, the data in the
+second interior set goes to the second row, and so on. The rules we discussed about mismatches
+between data and array sizes apply to each row. That is, if the first inner set of braces encloses
+10 numbers, only the first 10 elements of the first row are affected. The last two elements in
+that row are then initialized by default to zero. If there are too many numbers, it is an error;
+the numbers do not get shoved into the next row.
+You could omit the interior braces and just retain the two outermost braces. As long as you
+have the right number of entries, the effect is the same. If you are short of entries, however, the
+array is filled sequentially, row by row, until the data runs out. Then the remaining elements
+are initialized to 0 .

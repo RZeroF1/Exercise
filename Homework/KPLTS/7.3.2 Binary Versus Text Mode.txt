@@ -1,0 +1,22 @@
+Chapter7 Input and Output
+7.3 Adventures in Random Access: fseek() and ftell()
+7.3.2 Binary Versus Text Mode
+We designed Listing 13.4 to work in both the Unix and the MS-DOS environments. Unix has
+only one file format, so no special adjustments are needed. MS-DOS, however, does require
+extra attention. Many MS-DOS editors mark the end of a text file with the character Ctrl+Z.
+When such a file is opened in the text mode, C recognizes this character as marking the end of
+the file. When the same file is opened in the binary mode, however, the Ctrl+Z character is just
+another character in the file, and the actual end-of-file comes later. It might come immediately
+after the Ctrl+Z, or the file could be padded with null characters to make the size a multiple of,
+say, 256. Null characters don’t print under DOS, and we included code to prevent the program
+from trying to print the Ctrl+Z character.
+Another difference is one we’ve mentioned before: MS-DOS represents a text file newline with
+the \r\n combination. A C program opening the same file in a text mode “sees” \r\n as a
+simple \n , but, when using the binary mode, the program sees both characters. Therefore, we
+included coding to suppress printing \r . Because a Unix text file normally contains neither
+Ctrl+Z nor \r , this extra coding does not affect most Unix text files.
+The ftell() function may work differently in the text mode than in the binary mode. Many
+systems have text file formats that are different enough from the Unix model that a byte
+count from the beginning of the file is not a meaningful quantity. ANSI C states that, for the
+text mode, ftell() returns a value that can be used as the second argument to fseek() . For
+MS-DOS, for example, ftell() can return a count that sees \r\n as a single byte.

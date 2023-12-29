@@ -1,0 +1,10 @@
+Chapter1 A Tutorial Introduction
+1.1Getting Ready
+1.1.3 What Computers Do
+Modern computers have several components. The central processing unit , or CPU , does most
+of the computing work. The random access memory , or RAM , serves as a workspace to hold
+programs and files. The permanent memory storage device, typically a hard disk in the past,
+but now more and more often a solid-state device, remembers those programs and files, even
+while the computer is turned off. And various peripherals—such as the keyboard, mouse,
+touchscreen, and monitor—provide for communication between the computer and you. The
+CPU processes your programs; so let’s concentrate on its role.

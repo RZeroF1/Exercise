@@ -1,0 +1,54 @@
+Chapter7 Input and Output
+7.1 Standard I/O
+7.1.3 End-of-File
+A program reading data from a file needs to stop when it reaches the end of the file. How can
+a program tell if it has reached the end? The getc() function returns the special value EOF if it
+tries to read a character and discovers it has reached the end of the file. So a C program discovers
+it has reached the end of a file only after it tries to read past the end of the file. (This is
+unlike the behavior of some languages, which use a special function to test for end-of-file before
+attempting a read.)
+To avoid problems attempting to read an empty file, you should use an entry-condition loop
+(not a do while loop) for file input. Because of the design of getc() (and other C input
+functions), a program should attempt the first read before entering the body of the loop. So the
+following design is good:
+// good design #1
+int ch; // int to hold EOF
+FILE * fp;
+fp = fopen("wacky.txt", "r");
+ch = getc(fp); // get initial input
+while (ch != EOF)
+{
+	putchar(ch); // process input
+	ch = getc(fp); // get next input
+}
+
+This can be condensed to the following design:
+// good design #2
+int ch;
+FILE * fp;
+fp = fopen("wacky.txt", "r");
+while (( ch = getc(fp)) != EOF)
+{
+	putchar(ch); // process input
+}
+
+Because the input statement is part of the while test condition, it is executed before the
+program enters the body of the loop.
+You should avoid a design of this sort:
+// bad design (two problems)
+int ch;
+FILE * fp;
+fp = fopen("wacky.txt", "r");
+while (ch != EOF) // ch undetermined value first use
+{
+	ch = getc(fp); // get input
+	putchar(ch); // process input
+}
+
+The first problem is that the first time ch is compared with EOF , it has not yet been assigned a
+value. The second problem is that if getc() does return EOF , the loop tries to process EOF as
+if it were a valid character. These defects are fixable. For example, you could initialize ch to a
+dummy value and stick an if statement inside the loop, but why bother when good designs
+are already available.
+These cautions carry over to the other input functions. They also return an error signal (either
+EOF or the NULL pointer) after running into the end of a file.

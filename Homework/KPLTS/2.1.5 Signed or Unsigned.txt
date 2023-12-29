@@ -1,0 +1,11 @@
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.5 Signed or Unsigned?
+Some C implementations make char a signed type. This means a char can hold values typically
+in the range –128 through 127. Other implementations make char an unsigned type,
+which provides a range of 0 through 255. Your compiler manual should tell you which type
+your char is, or you can check the limits.h header file, discussed in the next chapter.
+As of C90, C enabled you to use the keywords signed and unsigned with char . Then, regardless
+of what your default char is, signed char would be signed, and unsigned char would
+be unsigned. These versions of char are useful if you’re using the type to handle small integers.
+For character use, just use the standard char type without modifiers.

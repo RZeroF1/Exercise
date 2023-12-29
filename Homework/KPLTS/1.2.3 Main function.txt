@@ -1,0 +1,11 @@
+Chapter1 A Tutorial Introduction
+1.2Introducing C
+1.2.3 Main function
+Every C program, no matter how many lines of code it has, starts with the main function, which is the entry point of the program.
+The main function is also called the main function. int in front of main means that 
+the main function returns an integer value at the end of its execution.
+The int in front of main means that the main function returns an integer value at the end of its execution. 
+So in the main function at the end of the return 0; just before and after the echo.
+- The main function is the entry point of the program
+- There is only one main function
+- Even if there are multiple .c files in a project, there can only be one main function.

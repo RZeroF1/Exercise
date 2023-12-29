@@ -1,0 +1,25 @@
+Chapter3 Control Flow
+3.1 C Control Statements:Looping
+3.1.2 for loop
+The for loop gathers all three actions (initializing, testing, and updating) into one place. By
+using a for loop, you can replace the preceding program with the one shown:
+
+#include <stdio.h>
+int main(void)
+{
+const int NUMBER = 22;
+int count;
+for (count = 1; count <= NUMBER; count++)
+printf("Be my Valentine!\n");
+return 0;
+}
+
+The parentheses following the keyword for contain three expressions separated by two semicolons.
+The first expression is the initialization. It is done just once, when the for loop first
+starts. The second expression is the test condition; it is evaluated before each potential execution
+of a loop. When the expression is false (when count is greater than NUMBER ), the loop is
+terminated. The third expression, the change or update, is evaluated at the end of each loop.
+Listing 6.10 uses it to increment the value of count , but it needn’t be restricted to that use. The
+for statement is completed by following it with a single simple or compound statement. Each
+of the three control expressions is a full expression, so any side effects in a control expression,
+such as incrementing a variable, take place before the program evaluates another expression.

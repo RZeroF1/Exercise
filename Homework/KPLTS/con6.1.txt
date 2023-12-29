@@ -1,0 +1,15 @@
+Contents of Programing Language (C)
+Chapter6 Structures
+	Section1 Defining a Structure Variable
+		1 Initializing a Structure
+
+		2 Gaining Access to Structure Members
+
+		3 Initializers for Structures
+
+	Section2 Arrays of Structures
+	Section3 Pointers to Structures
+	Section4 Unions: A Quick Look
+	Section5 Enumerated Types
+	Section6 typedef: A Quick Look
+Please enter the number in "Defining a Structure Variable" you want to browse('back' to return):

@@ -1,0 +1,13 @@
+Chapter4 Functions and Program Structure
+4.1 Functions
+4.1.5 The Black-Box Viewpoint
+Taking a black-box viewpoint of show_n_char() , the input is the character to be displayed and
+the number of spaces to be skipped. The resulting action is printing the character the specified
+number of times. The input is communicated to the function via arguments. This information
+is enough to tell you how to use the function in main() . Also, it serves as a design specification
+for writing the function.
+The fact that ch , num , and count are local variables private to the show_n_char() function is
+an essential aspect of the black box approach. If you were to use variables with the same names
+in main() , they would be separate, independent variables. That is, if main() had a count variable,
+changing its value wouldn’t change the value of count in show_n_char() , and vice versa.
+What goes on inside the black box is hidden from the calling function.

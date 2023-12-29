@@ -1,0 +1,11 @@
+Contents of Programing Language (C)
+Chapter7 Input and Output
+	Section1 Standard I/O
+	Section2 File I/O: fprintf(), fscanf(), fgets(), and fputs()
+		1 The fprintf() and fscanf() Functions
+
+		2 The fgets() and fputs() Functions
+
+	Section3 Adventures in Random Access: fseek() and ftell()
+	Section4 Other Standard I/O Functions
+Please enter the number in Section2 you want to browse('back' to return):

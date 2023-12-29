@@ -1,0 +1,21 @@
+Chapter4 Functions and Program Structure
+4.1 Functions
+4.1.4 Calling a Function with an Argument: Actual Arguments
+You give ch and num values by using actual arguments in the function call. Consider the first use
+of show_n_char() :
+show_n_char(SPACE, 12);
+The actual arguments are the space character and 12 . These values are assigned to the corresponding
+formal parameters in show_n_char() —the variables ch and num . In short, the formal
+parameter is a variable in the called function, and the actual argument is the particular value
+assigned to the function variable by the calling function. As the example shows, the actual
+argument can be a constant, a variable, or an even more elaborate expression. Regardless of
+which it is, the actual argument is evaluated, and its value is copied to the corresponding
+formal parameter for the function. For instance, consider the final use of show_n_char() :
+show_n_char(SPACE, (WIDTH - strlen(PLACE)) / 2);
+The long expression forming the second actual argument is evaluated to 10 . Then the value
+10 is assigned to the variable num . The function neither knows nor cares whether that number
+came from a constant, a variable, or a more general expression. Once again, the actual argument
+is a specific value that is assigned to the variable known as the formal parameter. Because the 
+called function works with data copied from the calling function, theoriginal data in the calling 
+function is protected from whatever manipulations the called function applies to the copies.
+

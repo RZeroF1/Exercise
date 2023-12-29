@@ -1,0 +1,10 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.2 The int fflush() Function
+The prototype for fflush( ) is this:
+int fflush(FILE *fp);
+Calling the fflush() function causes any unwritten data in the output buffer to be sent to the
+output file identified by fp. This process is called flushing a buffer. If fp is the null pointer, all
+output buffers are flushed. The effect of using fflush() on an input stream is undefined. You
+can use it with an update stream (any of the read-write modes), provided that the most recent
+operation using the stream was not input.

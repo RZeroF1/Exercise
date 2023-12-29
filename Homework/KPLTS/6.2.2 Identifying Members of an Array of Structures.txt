@@ -1,0 +1,24 @@
+Chapter6 Structures
+6.2 Arrays of Structures
+6.2.2 Identifying Members of an Array of Structures
+To identify members of an array of structures, you apply the same rule used for individual
+structures: Follow the structure name with the dot operator and then with the member name.
+Here’s an example:
+library[0].value /* the value associated with the first array element */
+library[4].title /* the title associated with the fifth array element */
+Note that the array subscript is attached to library , not to the end of the name:
+library.value[2] // WRONG
+library[2].value // RIGHT
+The reason library[2].value is used is that library[2] is the structure variable name, just
+as library[1] is another structure variable name.
+By the way, what do you suppose the following represents?
+library[2].title[4]
+It’s the fifth character in the title (the title[4] part) of the book described by the third structure
+(the library[2] part). In the example, it would be the character B . This example points
+out that subscripts found to the right of the dot operator apply to individual members, but
+subscripts to the left of the dot operator apply to arrays of structures.
+In summary, we have this sequence:
+library // an array of book structures
+library[2] // an array element, hence a book structure
+library[2].title // a char array (the title member of library[2])
+library[2].title[4] // a char in the title member array

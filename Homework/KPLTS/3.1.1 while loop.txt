@@ -1,0 +1,15 @@
+Chapter3 Control Flow
+3.1 C Control Statements:Looping
+3.1.1 while loop
+This is the general form of the while loop:
+
+while ( expression )
+	statement
+
+The statement part can be a simple statement with a terminating semicolon, or it can be a
+compound statement enclosed in braces.
+So far, the examples have used relational expressions for the expression part; that is,
+expression has been a comparison of values. More generally, you can use any expression.
+If expression is true (or, more generally, nonzero), the statement is executed once and then
+the expression is tested again. This cycle of test and execution is repeated until expression
+becomes false (zero). Each cycle is called an iteration.

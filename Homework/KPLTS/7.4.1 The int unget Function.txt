@@ -1,0 +1,11 @@
+Chapter7 Input and Output
+7.4 Other Standard I/O Functions
+7.4.1 The int ungetc(int c, FILE *fp) Function
+The int ungetc() function pushes the character specified by c back onto the input stream.
+If you push a character onto the input stream, the next call to a standard input function reads
+that character. Suppose, for example, that you want a function to read characters
+up to, but not including, the next colon. You can use getchar() or getc() to read characters
+until a colon is read and then use ungetc() to place the colon back in the input stream.
+The ANSI C standard guarantees only one pushback at a time. If an implementation permits
+you to push back several characters in a row, the input functions read them in the reversed
+order of pushing.tpos().

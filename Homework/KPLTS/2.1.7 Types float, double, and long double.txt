@@ -1,0 +1,10 @@
+Chapter2 Type, Operation and Expressions
+2.1 Basic C Data Types
+2.1.7 Types float, double, and long double
+The various integer types serve well for most software development projects. However, financial
+and mathematically oriented programs often make use of floating-point numbers. In C, such
+numbers are called type float , double , or long double . They correspond to the real types
+of FORTRAN and Pascal. The floating-point approach, as already mentioned, enables you to
+represent a much greater range of numbers, including decimal fractions. Floating-point number
+representation is similar to scientific notation , a system used by scientists to express very large
+and very small numbers.

@@ -1,0 +1,27 @@
+Chapter2 Type, Operation and Expressions
+2.2 Operators
+2.2.7 Increment and Decrement Operators: ++ and --
+++ is a self-incrementing operator, which is further divided into pre++ and post++, and -- is a 
+self-decrementing operator, which is also divided into pre-- and post--.
+Pre-++
+
+int a = 10;
+int b = ++a;//++ operand is a, which is placed in front of a, that is, pre ++
+printf("a=%d b=%d\n",a , b);
+
+Calculation mnemonic: first +1, then use;
+a was 10, first +1, after a became 11, and then use is assigned to b, b get also 11, so after 
+the calculation technique, a and b are both
+are 11, equivalent to code like this:
+int a = 10;
+
+b = a.
+printf("a=%d b=%d\n",a , b);
+
+Posterior ++
+int a = 10;
+int b = a++;//++ operand is a, which is placed after a, that is, post++
+printf("a=%d b=%d\n",a , b);
+
+Calculation mnemonic: use first, then +1
+Same as --

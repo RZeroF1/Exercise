@@ -1,0 +1,39 @@
+Chapter4 Functions and Program Structure
+4.2 Recursion
+4.2.5 Recursion Pros and Cons
+Recursion has its good points and bad points. One good point is that recursion offers the
+simplest solution to some programming problems. One bad point is that some recursive algorithms
+can rapidly exhaust a computer’s memory resources. Also, recursion can be difficult
+to document and maintain. Let’s look at an example that illustrates both the good and bad
+aspects.
+Fibonacci numbers can be defined as follows: The first Fibonacci number is 1, the second
+Fibonacci number is 1, and each subsequent Fibonacci number is the sum of the preceding two.
+Therefore, the first few numbers in the sequence are 1, 1, 2, 3, 5, 8, 13. Fibonacci numbers are
+among the most beloved in mathematics; there even is a journal devoted to them. But let’s not
+get into that. Instead, let’s create a function that, given a positive integer n , returns the corresponding
+Fibonacci number.
+First, the recursive strength: Recursion supplies a simple definition. If we name the function
+Fibonacci() , Fibonacci(n ) should return 1 if n is 1 or 2, and it should return the sum
+Fibonacci(n-1) + Fibonacci(n-2) otherwise:
+unsigned long Fibonacci(unsigned n)
+
+{
+	if (n > 2)
+		return Fibonacci(n-1) + Fibonacci(n-2);
+	else
+		return 1;
+}
+
+The recursive C function merely restates the recursive mathematical definition. This function
+uses double recursion ; that is, the function calls itself twice. And that leads to a weakness.
+To see the nature of that weakness, suppose you use the function call Fibonacci(40) .
+That would be the first level of recursion, and it allocates a variable called n . It then evokes
+Fibonacci() twice, creating two more variables called n at the second level of recursion.
+Each of those two calls generates two more calls, requiring four more variables called n at the
+third level of recursion, for a total of seven variables. Each level requires twice the number of
+variables as the preceding level, and the number of variables grows exponentially! As you saw
+in the grains-of-wheat example in Chapter 5 , “Operators, Expressions, and Statements,” exponential
+growth rapidly leads to large values. In this case, exponential growth soon leads to the
+computer requiring an enormous amount of memory, most likely causing the program to crash.
+Well, this is an extreme example, but it does illustrate the need for caution when using recursion,
+particularly when efficiency is important.

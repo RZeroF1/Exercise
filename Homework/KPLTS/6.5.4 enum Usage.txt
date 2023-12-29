@@ -1,0 +1,10 @@
+Chapter6 Structures
+6.5 Enumerated Types
+6.5.4 enum Usage
+Recall that the purpose of enumerated types is to enhance a program’s readability and make it
+easier to maintain. If you are dealing with colors, using red and blue is much more obvious
+than using 0 and 1 . Note that the enumerated types are for internal use. If you want to enter a
+value of orange for color , you have to enter a 1 , not the word orange , or you can read in the
+string "orange" and have the program convert it to the value orange .
+Because the enumerated type is an integer type, enum variables can be used in expressions in
+the same manner as integer variables. They make convenient labels for a case statement.
