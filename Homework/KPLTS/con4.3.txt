@@ -1,4 +1,3 @@
-Please enter the number of chapter you want to browse('exit' to quit):
 Contents of Programing Language (C)
 Chapter4 Functions and Program Structure
 	Section1 Functions

@@ -6,17 +6,19 @@
 #include <time.h>
 #include "KPLTS.h"
 
+int learningdata[dim1][dim2] = { 0 };
+
 int main()
 {
     char user[99];
     char input1[99] = { 0 };
     identity(user);
-    system("cls");
+    loadingdata("data.dat", learningdata);
     do {
-        printf("Hello, %s\n", user);
-        //print the contents
-        openfile("cont.txt");
     main:
+        system("cls");
+        printf("Welcome! %s.\n", user);
+        openfile("cont.txt");
         scanf("%s", input1);
         if (strcmp(input1, "1") == 0)
         {
@@ -40,7 +42,7 @@ int main()
                         openfile("1.1.1 Whence C.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.1.1 Whence C.txt");
+                        writelog(starttime, endtime, way, user, "1.1.1 Whence C.txt", input1, chapter1input, learningdata);
                         goto chap1sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -50,7 +52,7 @@ int main()
                         openfile("1.1.2 Why C.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.1.2 Why C.txt");
+                        writelog(starttime, endtime, way, user, "1.1.2 Why C.txt", input1, chapter1input, learningdata);
                         goto chap1sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -60,7 +62,7 @@ int main()
                         openfile("1.1.3 What Computers Do.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.1.3 What Computers Do.txt");
+                        writelog(starttime, endtime, way, user, "1.1.3 What Computers Do.txt", input1, chapter1input, learningdata);
                         goto chap1sec1;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -70,7 +72,7 @@ int main()
                         openfile("1.1.4 Shortcoming.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.1.4 Shortcoming.txt");
+                        writelog(starttime, endtime, way, user, "1.1.4 Shortcoming.txt", input1, chapter1input, learningdata);
                         goto chap1sec1;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -80,7 +82,7 @@ int main()
                         openfile("1.1.5 Language Standards.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.1.5 Language Standards.txt");
+                        writelog(starttime, endtime, way, user, "1.1.5 Language Standards.txt", input1, chapter1input, learningdata);
                         goto chap1sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -89,7 +91,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap1sec1;
                     }
                 }
                 else if (strcmp(chapter1input, "2") == 0)
@@ -106,7 +108,7 @@ int main()
                         openfile("1.2.1 The Structure of a Simple Program.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.1 The Structure of a Simple Program.txt");
+                        writelog(starttime, endtime, way, user, "1.2.1 The Structure of a Simple Program.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -116,7 +118,7 @@ int main()
                         openfile("1.2.2 Introduction to keywords.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.2 Introduction to keywords.txt");
+                        writelog(starttime, endtime, way, user, "1.2.2 Introduction to keywords.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -126,7 +128,7 @@ int main()
                         openfile("1.2.3 Main function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.3 Main function.txt");
+                        writelog(starttime, endtime, way, user, "1.2.3 Main function.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -136,7 +138,7 @@ int main()
                         openfile("1.2.4 Library functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.4 Library functions.txt");
+                        writelog(starttime, endtime, way, user, "1.2.4 Library functions.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -146,7 +148,7 @@ int main()
                         openfile("1.2.5 Compilation and Linking.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.5 Compilation and Linking.txt");
+                        writelog(starttime, endtime, way, user, "1.2.5 Compilation and Linking.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "6") == 0)
@@ -156,7 +158,7 @@ int main()
                         openfile("1.2.6 Characters and ASCII encoding.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.6 Characters and ASCII encoding.txt");
+                        writelog(starttime, endtime, way, user, "1.2.6 Characters and ASCII encoding.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "7") == 0)
@@ -166,26 +168,25 @@ int main()
                         openfile("1.2.7 Debugging.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "1.2.7 Debugging.txt");
+                        writelog(starttime, endtime, way, user, "1.2.7 Debugging.txt", input1, chapter1input, learningdata);
                         goto chap1sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
                     {
-                        goto chap2;
+                        goto chap1;
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap1sec2;
                     }
                 }
                 else if (strcmp(chapter1input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -211,7 +212,7 @@ int main()
                         openfile("2.1.1 int.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.1 int.txt");
+                        writelog(starttime, endtime, way, user, "2.1.1 int.txt",input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -221,7 +222,7 @@ int main()
                         openfile("2.1.2 float.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.2 float.txt");
+                        writelog(starttime, endtime, way, user, "2.1.2 float.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -231,7 +232,7 @@ int main()
                         openfile("2.1.3 long Constants and long long Constants.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.3 long Constants and long long Constants.txt");
+                        writelog(starttime, endtime, way, user, "2.1.3 long Constants and long long Constants.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -241,7 +242,7 @@ int main()
                         openfile("2.1.4 char.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.4 char.txt");
+                        writelog(starttime, endtime, way, user, "2.1.4 char.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -251,7 +252,7 @@ int main()
                         openfile("2.1.5 Signed or Unsigned.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.5 Signed or Unsigned.txt");
+                        writelog(starttime, endtime, way, user, "2.1.5 Signed or Unsigned.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "6") == 0)
@@ -261,7 +262,7 @@ int main()
                         openfile("2.1.6 The _Bool Type.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.6 The _Bool Type.txt");
+                        writelog(starttime, endtime, way, user, "2.1.6 The _Bool Type.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "7") == 0)
@@ -271,7 +272,7 @@ int main()
                         openfile("2.1.7 Types float, double, and long double.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.7 Types float, double, and long double.txt");
+                        writelog(starttime, endtime, way, user, "2.1.7 Types float, double, and long double.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "8") == 0)
@@ -281,7 +282,7 @@ int main()
                         openfile("2.1.8 Conversion Specifiers and the Resulting Printed Output.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.1.8 Conversion Specifiers and the Resulting Printed Output.txt");
+                        writelog(starttime, endtime, way, user, "2.1.8 Conversion Specifiers and the Resulting Printed Output.txt", input1, chapter2input, learningdata);
                         goto chap2sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -290,7 +291,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap2sec1;
                     }
                 }
                 else if (strcmp(chapter2input, "2") == 0)
@@ -307,7 +308,7 @@ int main()
                         openfile("2.2.1 Assignment Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.1 Assignment Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.1 Assignment Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -317,7 +318,7 @@ int main()
                         openfile("2.2.2 Addition Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.2 Addition Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.2 Addition Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -327,7 +328,7 @@ int main()
                         openfile("2.2.3 Subtraction Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.3 Subtraction Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.3 Subtraction Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -337,7 +338,7 @@ int main()
                         openfile("2.2.4 Multiplication Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.4 Multiplication Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.4 Multiplication Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -347,7 +348,7 @@ int main()
                         openfile("2.2.5 Division Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.5 Division Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.5 Division Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "6") == 0)
@@ -357,7 +358,7 @@ int main()
                         openfile("2.2.6 Modulus Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.6 Modulus Operator.txt");
+                        writelog(starttime, endtime, way, user, "2.2.6 Modulus Operator.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "7") == 0)
@@ -367,7 +368,7 @@ int main()
                         openfile("2.2.7 Increment and Decrement Operators.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.7 Increment and Decrement Operators.txt");
+                        writelog(starttime, endtime, way, user, "2.2.7 Increment and Decrement Operators.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "8") == 0)
@@ -377,7 +378,7 @@ int main()
                         openfile("2.2.8 Forced type conversion.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.8 Forced type conversion.txt");
+                        writelog(starttime, endtime, way, user, "2.2.8 Forced type conversion.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "9") == 0)
@@ -387,7 +388,7 @@ int main()
                         openfile("2.2.9 More Assignment Operators.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.2.9 More Assignment Operators.txt");
+                        writelog(starttime, endtime, way, user, "2.2.9 More Assignment Operators.txt", input1, chapter2input, learningdata);
                         goto chap2sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -396,7 +397,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap2sec2;
                     }
                 }
                 else if (strcmp(chapter2input, "3") == 0)
@@ -413,7 +414,7 @@ int main()
                         openfile("2.3.1 Expressions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.3.1 Expressions.txt");
+                        writelog(starttime, endtime, way, user, "2.3.1 Expressions.txt", input1, chapter2input, learningdata);
                         goto chap2sec3;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -423,26 +424,25 @@ int main()
                         openfile("2.3.2 Statements.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "2.3.2 Statements.txt");
+                        writelog(starttime, endtime, way, user, "2.3.2 Statements.txt", input1, chapter2input, learningdata);
                         goto chap2sec3;
                     }
                     else if (strcmp(judge, "back") == 0)
                     {
-                        goto chap1;
+                        goto chap2;
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap2sec3;
                     }
-                    }
+                }
                 else if (strcmp(chapter2input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -468,7 +468,7 @@ int main()
                         openfile("3.1.1 while loop.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.1.1 while loop.txt");
+                        writelog(starttime, endtime, way, user, "3.1.1 while loop.txt", input1, chapter3input, learningdata);
                         goto chap3sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -478,7 +478,7 @@ int main()
                         openfile("3.1.2 for loop.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.1.2 for loop.txt");
+                        writelog(starttime, endtime, way, user, "3.1.2 for loop.txt", input1, chapter3input, learningdata);
                         goto chap3sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -488,7 +488,7 @@ int main()
                         openfile("3.1.3 do while.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.1.3 do while.txt");
+                        writelog(starttime, endtime, way, user, "3.1.3 do while.txt", input1, chapter3input, learningdata);
                         goto chap3sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -497,7 +497,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap3sec1;
                     }
                 }
                 else if (strcmp(chapter3input, "2") == 0)
@@ -514,7 +514,7 @@ int main()
                         openfile("3.2.1 The if Statement.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.1 The if Statement.txt");
+                        writelog(starttime, endtime, way, user, "3.2.1 The if Statement.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -524,7 +524,7 @@ int main()
                         openfile("3.2.2 Adding else to the if Statement.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.2 Adding else to the if Statement.txt");
+                        writelog(starttime, endtime, way, user, "3.2.2 Adding else to the if Statement.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -534,7 +534,7 @@ int main()
                         openfile("3.2.3 The Conditional Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.3 The Conditional Operator.txt");
+                        writelog(starttime, endtime, way, user, "3.2.3 The Conditional Operator.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -544,7 +544,7 @@ int main()
                         openfile("3.2.4 Loop Aids.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.4 Loop Aids.txt");
+                        writelog(starttime, endtime, way, user, "3.2.4 Loop Aids.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -554,7 +554,7 @@ int main()
                         openfile("3.2.5 Multiple Choice.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.5 Multiple Choice.txt");
+                        writelog(starttime, endtime, way, user, "3.2.5 Multiple Choice.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "6") == 0)
@@ -564,7 +564,7 @@ int main()
                         openfile("3.2.6 switch and if else.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.6 switch and if else.txt");
+                        writelog(starttime, endtime, way, user, "3.2.6 switch and if else.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "7") == 0)
@@ -574,7 +574,7 @@ int main()
                         openfile("3.2.7 The goto Statement.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "3.2.7 The goto Statement.txt");
+                        writelog(starttime, endtime, way, user, "3.2.7 The goto Statement.txt", input1, chapter3input, learningdata);
                         goto chap3sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -583,17 +583,16 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap3sec2;
                     }
                 }
                 else if (strcmp(chapter3input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -619,7 +618,7 @@ int main()
                         openfile("4.1.1 Creating and Using a Simple Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.1.1 Creating and Using a Simple Function.txt");
+                        writelog(starttime, endtime, way, user, "4.1.1 Creating and Using a Simple Function.txt", input1, chapter4input, learningdata);
                         goto chap4sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -629,7 +628,7 @@ int main()
                         openfile("4.1.2 Defining a Function with an Argument.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.1.2 Defining a Function with an Argument.txt");
+                        writelog(starttime, endtime, way, user, "4.1.2 Defining a Function with an Argument.txt", input1, chapter4input, learningdata);
                         goto chap4sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -639,7 +638,7 @@ int main()
                         openfile("4.1.3 Prototyping a Function with Arguments.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.1.3 Prototyping a Function with Arguments.txt");
+                        writelog(starttime, endtime, way, user, "4.1.3 Prototyping a Function with Arguments.txt", input1, chapter4input, learningdata);
                         goto chap4sec1;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -649,7 +648,7 @@ int main()
                         openfile("4.1.4 Calling a Function with an Argument.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.1.4 Calling a Function with an Argument.txt");
+                        writelog(starttime, endtime, way, user, "4.1.4 Calling a Function with an Argument.txt", input1, chapter4input, learningdata);
                         goto chap4sec1;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -659,7 +658,7 @@ int main()
                         openfile("4.1.5 The Black-Box Viewpoint.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.1.5 The Black-Box Viewpoint.txt");
+                        writelog(starttime, endtime, way, user, "4.1.5 The Black-Box Viewpoint.txt", input1, chapter4input, learningdata);
                         goto chap4sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -668,7 +667,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap4sec1;
                     }
                 }
                 else if (strcmp(chapter4input, "2") == 0)
@@ -685,7 +684,7 @@ int main()
                         openfile("4.2.1 Recursion Revealed.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.2.1 Recursion Revealed.txt");
+                        writelog(starttime, endtime, way, user, "4.2.1 Recursion Revealed.txt", input1, chapter4input, learningdata);
                         goto chap4sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -695,7 +694,7 @@ int main()
                         openfile("4.2.2 Recursion Fundamentals.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.2.2 Recursion Fundamentals.txt");
+                        writelog(starttime, endtime, way, user, "4.2.2 Recursion Fundamentals.txt", input1, chapter4input, learningdata);
                         goto chap4sec2;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -705,7 +704,7 @@ int main()
                         openfile("4.2.3 Tail Recursion.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.2.3 Tail Recursion.txt");
+                        writelog(starttime, endtime, way, user, "4.2.3 Tail Recursion.txt", input1, chapter4input, learningdata);
                         goto chap4sec2;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -715,7 +714,7 @@ int main()
                         openfile("4.2.4 Recursion and Reversal.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.2.4 Recursion and Reversal.txt");
+                        writelog(starttime, endtime, way, user, "4.2.4 Recursion and Reversal.txt", input1, chapter4input, learningdata);
                         goto chap4sec2;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -725,7 +724,7 @@ int main()
                         openfile("4.2.5 Recursion Pros and Cons.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.2.5 Recursion Pros and Cons.txt");
+                        writelog(starttime, endtime, way, user, "4.2.5 Recursion Pros and Cons.txt", input1, chapter4input, learningdata);
                         goto chap4sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -734,7 +733,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap4sec2;
                     }
                 }
                 else if (strcmp(chapter4input, "3") == 0)
@@ -751,7 +750,7 @@ int main()
                         openfile("4.3.1 The & Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.3.1 The & Operator.txt");
+                        writelog(starttime, endtime, way, user, "4.3.1 The & Operator.txt", input1, chapter4input, learningdata);
                         goto chap4sec3;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -761,7 +760,7 @@ int main()
                         openfile("4.3.2 The Indirection Operator.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.3.2 The Indirection Operator.txt");
+                        writelog(starttime, endtime, way, user, "4.3.2 The Indirection Operator.txt", input1, chapter4input, learningdata);
                         goto chap4sec3;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -771,7 +770,7 @@ int main()
                         openfile("4.3.3 Declaring Pointers.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "4.3.3 Declaring Pointers.txt");
+                        writelog(starttime, endtime, way, user, "4.3.3 Declaring Pointers.txt", input1, chapter4input, learningdata);
                         goto chap4sec3;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -780,17 +779,16 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap4sec3;
                     }
                 }
                 else if (strcmp(chapter4input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -816,7 +814,7 @@ int main()
                         openfile("5.1.1 Initialization.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.1.1 Initialization.txt");
+                        writelog(starttime, endtime, way, user, "5.1.1 Initialization.txt", input1, chapter5input, learningdata);
                         goto chap5sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -826,7 +824,7 @@ int main()
                         openfile("5.1.2 Designated Initializers (C99).txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.1.2 Designated Initializers (C99).txt");
+                        writelog(starttime, endtime, way, user, "5.1.2 Designated Initializers (C99).txt", input1, chapter5input, learningdata);
                         goto chap5sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -836,7 +834,7 @@ int main()
                         openfile("5.1.3 Specifying an Array Size.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.1.3 Specifying an Array Size.txt");
+                        writelog(starttime, endtime, way, user, "5.1.3 Specifying an Array Size.txt", input1, chapter5input, learningdata);
                         goto chap5sec1;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -846,7 +844,7 @@ int main()
                         openfile("5.1.4 Initializing a Two-Dimensional Array.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.1.4 Initializing a Two-Dimensional Array.txt");
+                        writelog(starttime, endtime, way, user, "5.1.4 Initializing a Two-Dimensional Array.txt", input1, chapter5input, learningdata);
                         goto chap5sec1;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -856,7 +854,7 @@ int main()
                         openfile("5.1.5 More Dimensions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.1.5 More Dimensions.txt");
+                        writelog(starttime, endtime, way, user, "5.1.5 More Dimensions.txt", input1, chapter5input, learningdata);
                         goto chap5sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -865,7 +863,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap5sec1;
                     }
                 }
                 else if (strcmp(chapter5input, "2") == 0)
@@ -882,7 +880,7 @@ int main()
                         openfile("5.2.1 Using Pointer Parameters.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.2.1 Using Pointer Parameters.txt");
+                        writelog(starttime, endtime, way, user, "5.2.1 Using Pointer Parameters.txt", input1, chapter5input, learningdata);
                         goto chap5sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -892,7 +890,7 @@ int main()
                         openfile("5.2.2 Comment_ Pointers and Arrays.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.2.2 Comment_ Pointers and Arrays.txt");
+                        writelog(starttime, endtime, way, user, "5.2.2 Comment_ Pointers and Arrays.txt", input1, chapter5input, learningdata);
                         goto chap5sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -901,7 +899,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap5sec2;
                     }
                 }
                 else if (strcmp(chapter5input, "3") == 0)
@@ -918,7 +916,7 @@ int main()
                         openfile("5.3.1 Using const with Formal Parameters.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.3.1 Using const with Formal Parameters.txt");
+                        writelog(starttime, endtime, way, user, "5.3.1 Using const with Formal Parameters.txt", input1, chapter5input, learningdata);
                         goto chap5sec3;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -928,7 +926,7 @@ int main()
                         openfile("5.3.2 More About const.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.3.2 More About const.txt");
+                        writelog(starttime, endtime, way, user, "5.3.2 More About const.txt", input1, chapter5input, learningdata);
                         goto chap5sec3;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -938,7 +936,7 @@ int main()
                         openfile("5.3.3 Pointers to Multidimensional Arrays.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.3.3 Pointers to Multidimensional Arrays.txt");
+                        writelog(starttime, endtime, way, user, "5.3.3 Pointers to Multidimensional Arrays.txt", input1, chapter5input, learningdata);
                         goto chap5sec3;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -948,26 +946,25 @@ int main()
                         openfile("5.3.4 Pointer Compatibility.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "5.3.4 Pointer Compatibility.txt");
+                        writelog(starttime, endtime, way, user, "5.3.4 Pointer Compatibility.txt", input1, chapter5input, learningdata);
                         goto chap5sec3;
                     }
                     else if (strcmp(judge, "back") == 0)
                     {
-                        goto chap1;
+                        goto chap5;
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap5sec3;
                     }
                 }
                 else if (strcmp(chapter5input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -993,7 +990,7 @@ int main()
                         openfile("6.1.1 Initializing a Structure.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.1.1 Initializing a Structure.txt");
+                        writelog(starttime, endtime, way, user, "6.1.1 Initializing a Structure.txt", input1, chapter6input, learningdata);
                         goto chap6sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1003,7 +1000,7 @@ int main()
                         openfile("6.1.2 Gaining Access to Structure Members.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.1.2 Gaining Access to Structure Members.txt");
+                        writelog(starttime, endtime, way, user, "6.1.2 Gaining Access to Structure Members.txt", input1, chapter6input, learningdata);
                         goto chap6sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -1013,7 +1010,7 @@ int main()
                         openfile("6.1.3 Initializers for Structures.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.1.3 Initializers for Structures.txt");
+                        writelog(starttime, endtime, way, user, "6.1.3 Initializers for Structures.txt", input1, chapter6input, learningdata);
                         goto chap6sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1022,7 +1019,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec1;
                     }
                 }
                 else if (strcmp(chapter6input, "2") == 0)
@@ -1039,7 +1036,7 @@ int main()
                         openfile("6.2.1 Declaring an Array of Structures.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.2.1 Declaring an Array of Structures.txt");
+                        writelog(starttime, endtime, way, user, "6.2.1 Declaring an Array of Structures.txt", input1, chapter6input, learningdata);
                         goto chap6sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1049,7 +1046,7 @@ int main()
                         openfile("6.2.2 Identifying Members of an Array of Structures.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.2.2 Identifying Members of an Array of Structures.txt");
+                        writelog(starttime, endtime, way, user, "6.2.2 Identifying Members of an Array of Structures.txt", input1, chapter6input, learningdata);
                         goto chap6sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1058,7 +1055,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec2;
                     }
                 }
                 else if (strcmp(chapter6input, "3") == 0)
@@ -1075,7 +1072,7 @@ int main()
                         openfile("6.3.1 Declaring and Initializing a Structure Pointer.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.3.1 Declaring and Initializing a Structure Pointer.txt");
+                        writelog(starttime, endtime, way, user, "6.3.1 Declaring and Initializing a Structure Pointer.txt", input1, chapter6input, learningdata);
                         goto chap6sec3;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1085,7 +1082,7 @@ int main()
                         openfile("6.3.2 Member Access by Pointer.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.3.2 Member Access by Pointer.txt");
+                        writelog(starttime, endtime, way, user, "6.3.2 Member Access by Pointer.txt", input1, chapter6input, learningdata);
                         goto chap6sec3;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1094,7 +1091,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec3;
                     }
                 }
                 else if (strcmp(chapter6input, "4") == 0)
@@ -1111,7 +1108,7 @@ int main()
                         openfile("6.4.1 Using Unions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.4.1 Using Unions.txt");
+                        writelog(starttime, endtime, way, user, "6.4.1 Using Unions.txt", input1, chapter6input, learningdata);
                         goto chap6sec4;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1121,7 +1118,7 @@ int main()
                         openfile("6.4.2 Anonymous Unions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.4.2 Anonymous Unions.txt");
+                        writelog(starttime, endtime, way, user, "6.4.2 Anonymous Unions.txt", input1, chapter6input, learningdata);
                         goto chap6sec4;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1130,7 +1127,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec4;
                     }
                     }
                 else if (strcmp(chapter6input, "5") == 0)
@@ -1147,7 +1144,7 @@ int main()
                         openfile("6.5.1 enum Constants.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.5.1 enum Constants.txt");
+                        writelog(starttime, endtime, way, user, "6.5.1 enum Constants.txt", input1, chapter6input, learningdata);
                         goto chap6sec5;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1157,7 +1154,7 @@ int main()
                         openfile("6.5.2 Default Values.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.5.2 Default Values.txt");
+                        writelog(starttime, endtime, way, user, "6.5.2 Default Values.txt", input1, chapter6input, learningdata);
                         goto chap6sec5;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -1167,7 +1164,7 @@ int main()
                         openfile("6.5.3 Assigned Values.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.5.3 Assigned Values.txt");
+                        writelog(starttime, endtime, way, user, "6.5.3 Assigned Values.txt", input1, chapter6input, learningdata);
                         goto chap6sec5;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -1177,7 +1174,7 @@ int main()
                         openfile("6.5.4 enum Usage.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.5.4 enum Usage.txt");
+                        writelog(starttime, endtime, way, user, "6.5.4 enum Usage.txt", input1, chapter6input, learningdata);
                         goto chap6sec5;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -1187,7 +1184,7 @@ int main()
                         openfile("6.5.5 Shared Namespaces.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.5.5 Shared Namespaces.txt");
+                        writelog(starttime, endtime, way, user, "6.5.5 Shared Namespaces.txt", input1, chapter6input, learningdata);
                         goto chap6sec5;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1196,9 +1193,9 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec5;
                     }
-                    }
+                }
                 else if (strcmp(chapter6input, "6") == 0)
                 {
                     char judge[99] = { 0 };
@@ -1213,7 +1210,7 @@ int main()
                         openfile("6.6.1 typedef A Quick Look.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "6.6.1 typedef A Quick Look.txt");
+                        writelog(starttime, endtime, way, user, "6.6.1 typedef A Quick Look.txt", input1, chapter6input, learningdata);
                         goto chap6sec6;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1222,17 +1219,16 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap6sec6;
                     }
-                    }
+                }
                 else if (strcmp(chapter6input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
@@ -1258,7 +1254,7 @@ int main()
                         openfile("7.1.1 The fopen() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.1.1 The fopen() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.1.1 The fopen() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec1;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1268,7 +1264,7 @@ int main()
                         openfile("7.1.2 The getc() and putc() Functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.1.2 The getc() and putc() Functions.txt");
+                        writelog(starttime, endtime, way, user, "7.1.2 The getc() and putc() Functions.txt", input1, chapter7input, learningdata);
                         goto chap7sec1;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -1278,7 +1274,7 @@ int main()
                         openfile("7.1.3 End-of-File.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.1.3 End-of-File.txt");
+                        writelog(starttime, endtime, way, user, "7.1.3 End-of-File.txt", input1, chapter7input, learningdata);
                         goto chap7sec1;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -1288,7 +1284,7 @@ int main()
                         openfile("7.1.4 The fclose() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.1.4 The fclose() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.1.4 The fclose() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec1;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -1298,7 +1294,7 @@ int main()
                         openfile("7.1.5 Pointers to the Standard Files.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.1.5 Pointers to the Standard Files.txt");
+                        writelog(starttime, endtime, way, user, "7.1.5 Pointers to the Standard Files.txt", input1, chapter7input, learningdata);
                         goto chap7sec1;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1307,7 +1303,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap7sec1;
                     }
                 }
                 else if (strcmp(chapter7input, "2") == 0)
@@ -1324,7 +1320,7 @@ int main()
                         openfile("7.2.1 The fprintf() and fscanf() Functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.2.1 The fprintf() and fscanf() Functions.txt");
+                        writelog(starttime, endtime, way, user, "7.2.1 The fprintf() and fscanf() Functions.txt", input1, chapter7input, learningdata);
                         goto chap7sec2;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1334,7 +1330,7 @@ int main()
                         openfile("7.2.2 The fgets() and fputs() Functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.2.2 The fgets() and fputs() Functions.txt");
+                        writelog(starttime, endtime, way, user, "7.2.2 The fgets() and fputs() Functions.txt", input1, chapter7input, learningdata);
                         goto chap7sec2;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1343,7 +1339,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap7sec2;
                     }
                 }
                 else if (strcmp(chapter7input, "3") == 0)
@@ -1360,7 +1356,7 @@ int main()
                         openfile("7.3.1 How fseek() and ftell() Work.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.3.1 How fseek() and ftell() Work.txt");
+                        writelog(starttime, endtime, way, user, "7.3.1 How fseek() and ftell() Work.txt", input1, chapter7input, learningdata);
                         goto chap7sec3;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1370,7 +1366,7 @@ int main()
                         openfile("7.3.2 Binary Versus Text Mode.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.3.2 Binary Versus Text Mode.txt");
+                        writelog(starttime, endtime, way, user, "7.3.2 Binary Versus Text Mode.txt", input1, chapter7input, learningdata);
                         goto chap7sec3;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -1380,7 +1376,7 @@ int main()
                         openfile("7.3.3 Portability.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.3.3 Portability.txt");
+                        writelog(starttime, endtime, way, user, "7.3.3 Portability.txt", input1, chapter7input, learningdata);
                         goto chap7sec3;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -1390,7 +1386,7 @@ int main()
                         openfile("7.3.4 The fgetpos() and fsetpos() Functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.3.4 The fgetpos() and fsetpos() Functions.txt");
+                        writelog(starttime, endtime, way, user, "7.3.4 The fgetpos() and fsetpos() Functions.txt", input1, chapter7input, learningdata);
                         goto chap7sec3;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1399,7 +1395,7 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap7sec3;
                     }
                 }
                 else if (strcmp(chapter7input, "4") == 0)
@@ -1416,7 +1412,7 @@ int main()
                         openfile("7.4.1 The int unget Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.1 The int unget Function.txt");
+                        writelog(starttime, endtime, way, user, "7.4.1 The int unget Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "2") == 0)
@@ -1426,7 +1422,7 @@ int main()
                         openfile("7.4.2 The int fflush() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.2 The int fflush() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.4.2 The int fflush() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "3") == 0)
@@ -1436,7 +1432,7 @@ int main()
                         openfile("7.4.3 The int setvbuf() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.3 The int setvbuf() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.4.3 The int setvbuf() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "4") == 0)
@@ -1446,7 +1442,7 @@ int main()
                         openfile("7.4.4 Binary IO fread() and fwrite().txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.4 Binary IO fread() and fwrite().txt");
+                        writelog(starttime, endtime, way, user, "7.4.4 Binary IO fread() and fwrite().txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "5") == 0)
@@ -1456,7 +1452,7 @@ int main()
                         openfile("7.4.5 The size_t fwrite() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.5 The size_t fwrite() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.4.5 The size_t fwrite() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "6") == 0)
@@ -1466,7 +1462,7 @@ int main()
                         openfile("7.4.6 The size_t fread() Function.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.6 The size_t fread() Function.txt");
+                        writelog(starttime, endtime, way, user, "7.4.6 The size_t fread() Function.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "7") == 0)
@@ -1476,7 +1472,7 @@ int main()
                         openfile("7.4.7 The int feof and int ferror Functions.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.7 The int feof and int ferror Functions.txt");
+                        writelog(starttime, endtime, way, user, "7.4.7 The int feof and int ferror Functions.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "8") == 0)
@@ -1486,7 +1482,7 @@ int main()
                         openfile("7.4.8 An fread() and fwrite() Example.txt");
                         back();
                         clock_t endtime = clock();
-                        writelog(starttime, endtime, way, user, "7.4.8 An fread() and fwrite() Example.txt");
+                        writelog(starttime, endtime, way, user, "7.4.8 An fread() and fwrite() Example.txt", input1, chapter7input, learningdata);
                         goto chap7sec4;
                     }
                     else if (strcmp(judge, "back") == 0)
@@ -1495,51 +1491,80 @@ int main()
                     }
                     else
                     {
-                        printf("Not found! Please input correct number:");
+                        goto chap7sec4;
                     }
-                    }
+                }
                 else if (strcmp(chapter7input, "back") == 0)
                 {
-                    system("cls");
                     break;
                 }
                 else
                 {
-                    printf("Not found! Please input correct number:");
+                    continue;
                 }
             } while (1);
         }
         else if (strcmp(input1, "8") == 0)
         {
-            viewlog();
+            system("cls");
+            char option[99] = { 0 };
+            printf("KPLTS*LOG**************************************************************************\n");
+            printf("Which log do you want to browse?\n\n");
+            printf("\t1\tLearninglog\n\n");
+            printf("\t2\tCumulative learning times\n\n");
+            printf("Tell me the number you choose(Any other key returns):");
+            scanf("%s", option);
+            if (strcmp(option, "1") == 0)
+            {
+                openfile("log.txt");
+            }
+            else if (strcmp(option, "2") == 0)
+            {
+                viewlog(learningdata);
+            }
+            else
+            {
+                goto main;
+            }
+            back();
         }
         else if (strcmp(input1, "9") == 0)
+        {
+            system("cls");
+            char option[99] = { 0 };
+            printf("KPLTS*LOG**************************************************************************\n");
+            printf("Which log do you want to delete?\n\n");
+            printf("\t1\tLearninglog\n\n");
+            printf("\t2\tCumulative learning times\n\n");
+            printf("\t3\tALL\n\n");
+            printf("Tell me the number you choose(Any other key returns):");
+        
+            scanf("%s", option);
+            if (strcmp(option, "1") == 0)
+            {
+                removefile("log.txt");
+            }
+            else if (strcmp(option, "2") == 0)
+            {
+                removefile("data.dat");
+            }
+            else if (strcmp(option, "3") == 0)
+            { 
+                removefilex("log.txt", "data.dat");
+            }
+            else
+                goto main;
+            back();
+        }
+        else if (strcmp(input1, "10") == 0)
         {
             break;
         }
         else
         {
-            printf("Not found! Please input correct number:");
-            goto main;
+            continue;
         }
     } while (1);
+    savedata(learningdata);
     return 0;
 }
-
-//typedef struct {
-//    char chapter[99];
-//    sec;
-//}learninglog, chap1log, chap2log, chap3log, chap4log, chap5log, chap6log, chap7log;//7
-
-//typedef struct {
-//    char section[99];
-//    know;
-//}sec, sec1log, sec2log, sec3log, sec4log, sec5log, sec6log, sec7log, sec8log, sec9log, sec10log;//10
-
-//typedef struct {
-//    char knowledgepoint[99];
-//}know, know1log, know2log, know3log, know5log, know6log, know7log, know8log, know9log, know10log;//10
-
-//typedef struct {
-//    int j;
-//}method, T, S, P, O, Guided, Independent;//6

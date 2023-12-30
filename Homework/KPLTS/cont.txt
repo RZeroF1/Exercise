@@ -13,8 +13,11 @@ Chapter6 Structures
 
 Chapter7 Input and Output
 
-8.View log
+Function：
+       8 View learning log
 
-9.Exit
+       9 Delete learning log
+
+      10 Exit
 
 Please enter the number of chapter you want to browse:
