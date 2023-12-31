@@ -1,5 +1,7 @@
 #pragma once
 #include <string.h>
+#include <windows.h>
+
 #define dim1 7
 #define dim2 6
 

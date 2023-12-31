@@ -1516,6 +1516,7 @@ int main()
             scanf("%s", option);
             if (strcmp(option, "1") == 0)
             {
+                system("cls");
                 openfile("log.txt");
             }
             else if (strcmp(option, "2") == 0)

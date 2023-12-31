@@ -63,7 +63,7 @@ void identity(char user[99])
     }
     Sleep(500);
     printf("100%%\n\nDone!");
-    Sleep(500);
+    Sleep(1000);
 }
 
 int method()
@@ -120,19 +120,19 @@ void writelog(clock_t start, clock_t end, int method, const char* username, cons
 
     if (method == 1)
     {
-        strcpy(originalmethod, "L");
+        strcpy(originalmethod, "Lecture");
     }
     else if (method == 2)
     {
-        strcpy(originalmethod, "T");
+        strcpy(originalmethod, "Tutorial");
     }
     else if (method == 3)
     {
-        strcpy(originalmethod, "P");
+        strcpy(originalmethod, "Practice");
     }
     else if (method == 4)
     {
-        strcpy(originalmethod, "O");
+        strcpy(originalmethod, "Online");
     }
     else if (method == 5)
     {
@@ -176,6 +176,7 @@ void removefile(const char* file)
     printf("\t2\tNO\n\n");
     printf("Tell me the number you choose:");
     scanf("%s", re);
+    printf("\nInfo:\n");
     if (strcmp(re, "1") == 0)
     {
         if (remove(file) == 0)
@@ -204,7 +205,9 @@ void viewlog(int data[][dim2])
 {
     int s = 0;
     system("cls");
-    printf("\t\tL\tT\tP\tO\tGL\tIL\tTotal\n\n");
+    printf("KPLTS*system*log*Cumulative learning times*****************************************************************\n");
+    printf("***********************************************************************************************************\n");
+    printf("\n\t\tL\tT\tP\tO\tGL\tIL\tTotal\n");
     for (int i = 0; i < dim1; i++) 
     {
         int sum = 0;
@@ -233,6 +236,7 @@ void viewlog(int data[][dim2])
         s += sum;
     }
     printf("%-8d\n", s);
+    printf("\nInfo:The data in the table is in seconds\n");
 }
 
 void savedata(int data[][dim2])
@@ -277,6 +281,7 @@ void removefilex(const char* file1, const char* file2)
     printf("\t2\tNO\n\n");
     printf("Tell me the number you choose:");
     scanf("%s", re);
+    printf("\nInfo:\n");
     if (strcmp(re, "1") == 0)
     {
         if (remove(file1) == 0)
