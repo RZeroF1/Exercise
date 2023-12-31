@@ -54,8 +54,16 @@ void identity(char user[99])
     printf("Info:If you exit the system improperly, some data will be lost.\n\n");
     printf("Tell me your ID\n\nThen you can enter KPLTS system:");
     scanf("%s", id);
-    printf("Done! Loading KPLTS...\n");
     strcpy(user, id);
+    printf("\nLoading KPLTS system");
+    for (int i = 0; i < 6; i++)
+    {
+        Sleep(500);
+        printf(".");
+    }
+    Sleep(500);
+    printf("100%%\n\nDone!");
+    Sleep(500);
 }
 
 int method()

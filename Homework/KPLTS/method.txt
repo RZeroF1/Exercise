@@ -1,11 +1,12 @@
 How about your learning method?
 ***************************************
 Choice		Learning Way
-1		L
-2		T
-3		P
-4		O
-5		Guided Learning
-6		Independent Learning
+   1		L
+   2		T
+   3		P
+   4		O
+   5		Guided Learning
+   6		Independent Learning
 ***************************************
+
 I choose:
