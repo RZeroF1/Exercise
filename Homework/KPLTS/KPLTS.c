@@ -164,6 +164,7 @@ void writelog(clock_t start, clock_t end, int method, const char* username, cons
     File = NULL;
 
     processing(chapter, elapse, data, method);
+    savedata(data);
 }
 
 void removefile(const char* file)

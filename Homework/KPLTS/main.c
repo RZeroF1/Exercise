@@ -1555,7 +1555,7 @@ int main()
             }
             else
                 goto main;
-            back();
+            Sleep(3000);
         }
         else if (strcmp(input1, "10") == 0)
         {
@@ -1566,6 +1566,5 @@ int main()
             continue;
         }
     } while (1);
-    savedata(learningdata);
     return 0;
 }
