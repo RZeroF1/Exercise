@@ -208,7 +208,7 @@ void viewlog(int data[][dim2])
     system("cls");
     printf("KPLTS*system*log*Cumulative learning times*****************************************************************\n");
     printf("***********************************************************************************************************\n");
-    printf("\n\t\tL\tT\tP\tO\tGL\tIL\tTotal\n");
+    printf("\n\t\tL\tT\tP\tO\tGL\tIL\tSLT\n\n");
     for (int i = 0; i < dim1; i++) 
     {
         int sum = 0;
