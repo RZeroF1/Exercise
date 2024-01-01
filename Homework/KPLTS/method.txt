@@ -4,7 +4,7 @@ Choice		Learning Way
    1		Lecture
    2		Tutorial
    3		Practice
-   4		Others
+   4		Online
    5		Guided Learning
    6		Independent Learning
 ***************************************
