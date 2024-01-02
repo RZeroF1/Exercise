@@ -63,7 +63,7 @@ void identity(char user[99])
     }
     Sleep(500);
     printf("100%%\n\nDone!");
-    Sleep(1000);
+    Sleep(500);
 }
 
 int method()
@@ -186,7 +186,7 @@ void removefile(const char* file)
         }
         else
         {
-            printf("Error deleting file");
+            printf("Error deleting file\n");
         }
     }
     else

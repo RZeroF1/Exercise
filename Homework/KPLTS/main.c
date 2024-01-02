@@ -1555,7 +1555,8 @@ int main()
             }
             else
                 goto main;
-            Sleep(3000);
+            printf("Returning...\n");
+            Sleep(2000);
         }
         else if (strcmp(input1, "10") == 0)
         {
